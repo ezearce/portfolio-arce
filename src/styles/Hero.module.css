@@ -1,0 +1,120 @@
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero img {
+    filter: blur(2px); /* Ajusta la intensidad del desenfoque */
+    opacity: 0.5; /* Hace la imagen más tenue */
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #bef300;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeInEffect 1.2s ease-out forwards;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  background-color: #0f8f8f;
+}
+
+.downloadSection {
+  margin-top: 2px;
+}
+
+.ctaSecondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #15BABA;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 10px;
+  border: 2px solid #15BABA;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.ctaSecondary:hover {
+  background-color: #15BABA;
+  color: #1a1a1a;
+}
+
+.content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #bef300;
+}
+
+.cta {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-color: #0056b3;
+}
+
+.professionList {
+  list-style: none;
+  padding: 10;  
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Ajusta el valor según necesites */
+}
+
+.subtitle,
+.title,
+.professionList li {
+    opacity: 0; /* Asegura que el texto empiece invisible */
+}
+
+.fadeIn {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInEffect 1.2s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  

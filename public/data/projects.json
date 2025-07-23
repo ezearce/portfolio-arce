@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Control de Stock - Lubricentro CH",
+        "description": "Aplicación web de control de stock desarrollada con Laravel. Incluye gestión de productos, categorías, ventas, reportes y facturación integrada con ARCA. Cuenta con autenticación, panel administrativo, roles de usuario y fue desplegada en Hostinger. Trabajo realizado en modalidad Freelance a un cliente de Villa Regina.",
+        "image": "/assets/lubricentroch.JPG",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "title": "e-Commerce",
+        "description": "Tienda Online realizada en React.js en FrontEnd y en Laravel y Node.js en BackEnd. Cuenta con un sistema de autenticación, implementación de un carrito de ventas, integración de API de Mercado Pago para realizar pagos dentro de la app en FrontEnd y un panel de administración de ventas, productos y usuarios en BackEnd.",
+        "image": "/assets/imgtienda.JPG",
+        "link": "https://templo-del-futbol-frontend.vercel.app/"
+    },
+    {
+        "id": 3,
+        "title": "Servicio Ya",
+        "description": "Aplicación móvil multiplataforma desarrollada con Flutter (mobile) y Laravel (backend), orientada a la gestión de servicios. Permite a los usuarios registrarse como clientes o trabajadores, gestionar perfiles, enviar y recibir solicitudes, y dejar reseñas. Diseñada con foco en usabilidad, escalabilidad y una experiencia fluida.",
+        "image": "/assets/img_servicioya1.jpg",
+        "link": "https://appservicioya.com/"
+    },
+    {
+        "id": 4,
+        "title": "Police Chase",
+        "description": "Versión personalizada de Pac-Man desarrollada en Java, con interfaz gráfica, manejo de colisiones, control por teclado y lógica concurrente mediante hilos. Se aplicaron patrones de diseño como Singleton, Visitor y Abstract Factory para una estructura flexible y escalable. ",
+        "image": "/assets/pac-man.JPG",
+        "link": "https://github.com/ezearce/tdp-proyecto-3"
+    }
+]

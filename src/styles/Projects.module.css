@@ -1,0 +1,144 @@
+/* 🔹 Ajustar el contenedor principal para centrar los proyectos */
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 1.5rem;
+    font-weight: bold;
+    color: #bef300;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Imagen de fondo separada en un div para evitar problemas */
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/img3.jpg');
+  background-size: cover;
+  background-position: top;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 🔹 Contenedor de proyectos centrado */
+.projectsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  max-width: 900px;
+  z-index: 1;
+}
+
+/* 🔹 Tarjeta del proyecto */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(26, 26, 26, 0.9);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Contenido dentro de cada tarjeta */
+.cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+/* 🔹 Texto alineado a la izquierda */
+.textContainer {
+  flex: 1;
+  min-width: 60%;
+}
+
+/* 🔹 Imagen alineada a la derecha */
+.imageContainer {
+  flex-shrink: 0;
+}
+
+.projectImage {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.05);
+}
+
+/* 📏 Media Queries para que sea responsivo */
+@media (max-width: 768px) {
+  .cardContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    
+  }
+
+  .textContainer {
+      flex-direction: column; /* Cambia a diseño en columna en pantallas pequeñas */
+      gap: 20px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .projectImage {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .text {
+    font-size: 0.85rem;
+  }
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fadeIn {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

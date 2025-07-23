@@ -1,0 +1,56 @@
+/* Estilos generales del Footer */
+.footer {
+  background-color: #1b1b1b;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.names {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-weight: bold;
+  color: #bef300; /* Verde muy claro que contrasta elegantemente */
+}
+
+.copyRight {
+  font-size: 0.9rem;
+  color: #f2f2f2;
+}
+
+/* Enlaces en el footer */
+.copyRight a {
+  text-decoration: none;
+  color: #D0F0E8; /* Verde pálido amigable */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.copyRight a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom: 2px solid #FFFFFF; /* Subrayado limpio y visible */
+  transform: translateY(-2px);
+}
+
+
+.copyRight a:focus {
+  outline: none;
+  border-bottom: 2px dashed #BFE3D8;
+}
+
+
+.copyRight a:active {
+  color: #BFE3D8;
+  transform: translateY(1px);
+}

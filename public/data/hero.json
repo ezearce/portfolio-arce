@@ -1,0 +1,19 @@
+{
+    "about": {
+      "name": "Ezequiel Arce",
+      "profession": [
+        "Ingeniero en Sistemas de Información",
+        "Desarrollador FullStack"
+      ],
+      "socialLinks": [
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/ezearce"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "https://www.linkedin.com/in/ezequiel-arce-4457371b7/"
+        }
+      ]
+    }
+  }

@@ -1,0 +1,116 @@
+.about {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;  /* Ocupar todo el ancho */
+    min-height: 100vh; /* Ocupar toda la altura de la pantalla */
+    padding: 50px;
+    overflow: hidden; /* Evita el desplazamiento si la imagen es más grande */
+}
+  
+  .about img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    opacity: 0.5;
+}
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(26, 26, 26, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    width: 100%;
+    word-wrap: break-word; /* Para cortar palabras largas */
+    overflow: hidden; /* Evita que el contenido se desborde */
+  }
+  
+  .textContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .textBlock {
+    flex: 1;
+  min-width: 100%; /* Hace que los bloques no queden apretados en móviles */
+  }
+  .text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #bef300;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* 📏 Media Queries para hacer el diseño responsivo */
+  @media (max-width: 768px) {
+    .textContainer {
+      flex-direction: column; /* Cambia a diseño en columna en pantallas pequeñas */
+      gap: 20px;
+    }
+  
+    .content {
+      width: 100%; /* Que ocupe todo el ancho disponible */
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.3rem; /* Reduce el tamaño del título */
+    }
+  
+    .text {
+      font-size: 0.9rem; /* Reduce el tamaño del texto */
+    }
+  }
+  .text {
+    opacity: 0;
+  }
+  
+  .fadeIn {
+    animation: fadeInEffect 2s ease-out forwards;
+  }
+  
+  @keyframes fadeInEffect {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    .text {
+      font-size: 0.85rem;
+    }
+  }
+  
