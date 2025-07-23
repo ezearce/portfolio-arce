@@ -1,0 +1,88 @@
+.hero {
+  position: relative;
+  /* fuerza 100% del viewport */
+  width: 100vw;
+  /* “saca” el section del flujo centrado */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* background, overlay y content igual que antes */
+.background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  animation: zoom 20s ease-in-out infinite;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* en lugar de `h1 { … }`: */
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* en lugar de `p { … }`: */
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #15BABA;
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes zoom {
+  0%, 100% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
