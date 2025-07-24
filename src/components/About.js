@@ -1,4 +1,4 @@
-import useInView from "@/hooks/useInView"; // o donde lo tengas
+import useInView from "@/hooks/useInView"; 
 import styles from "@/styles/About.module.css";
 import Image from "next/image";
 import aboutData from "../../public/data/about.json";
