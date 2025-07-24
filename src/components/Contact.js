@@ -39,6 +39,7 @@ export default function Contact() {
             id: 1,
             icon: <SiGmail />,
             content: "ezequielagustinarce1@gmail.com",
+            link: "mailto:ezequielagustinarce1@gmail.com", 
           },
           {
             id: 2,

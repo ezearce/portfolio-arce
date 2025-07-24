@@ -9,37 +9,37 @@ export default function Skills() {
     {
       id: 1,
       name: "Desarrollo Web Backend",
-      description: "2 años de experiencia en proyectos personales, académicos y freelance. Laravel, Node.js.",
+      description: "+3 años de experiencia en proyectos profesionales, personales, académicos y freelance. Tecnologías principales: PHP (incluye Laravel), Node.js, Java.",
       icon: <FaCode />,
     },
     {
       id: 2,
       name: "Desarrollo Web Frontend",
-      description: "1 año en proyectos personales y académicos. React.js, Next.js.",
+      description: "+3 años de experiencia en proyectos profesionales, personales y académicos. Tecnologías principales: React.js, Next.js.",
       icon: <MdWeb />,
     },
     {
       id: 3,
       name: "Desarrollo de Apps Móviles",
-      description: "2 años de experiencia con Kotlin, Flutter y React Native.",
+      description: "+2 años de experiencia en proyectos profesionales, personales y académicos con Kotlin, Flutter y React Native.",
       icon: <FaMobileAlt />,
     },
     {
       id: 4,
       name: "Bases de Datos",
-      description: "SQL, PostgreSQL y MySQL en varios proyectos académicos y personales.",
+      description: "SQL, PostgreSQL y MySQL en el ámbito profesional y personal.",
       icon: <FaDatabase />,
     },
     {
       id: 5,
       name: "Apps de Escritorio",
-      description: "Aplicaciones en Java aplicando OOP y patrones de diseño.",
+      description: "Aplicaciones en Java aplicando OOP, patrones de diseño y buenas prácticas.",
       icon: <MdDesktopMac />,
     },
     {
       id: 6,
       name: "Control de Versiones",
-      description: "Git y GitHub para proyectos colaborativos y personales.",
+      description: "Git y GitHub para proyectos colaborativos.",
       icon: <FaTools />,
     },
     {
