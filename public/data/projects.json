@@ -1,30 +1,30 @@
 [
     {
         "id": 1,
-        "title": "Control de Stock - Lubricentro CH",
-        "description": "Aplicación web de control de stock desarrollada con Laravel. Incluye gestión de productos, categorías, ventas, reportes y facturación integrada con ARCA. Cuenta con autenticación, panel administrativo, roles de usuario y fue desplegada en Hostinger. Trabajo realizado en modalidad Freelance a un cliente de Villa Regina.",
-        "image": "/assets/lubricentroch.JPG",
-        "link": "#"
+        "title": "Servicio Ya",
+        "description": "Aplicación móvil para Android desarrollada con Flutter y Laravel, que conecta clientes y profesionales para la gestión eficiente de servicios. Permite registro con Google, perfiles completos, solicitudes rápidas o con presupuestos, seguimiento en tiempo real y comunicación directa vía WhatsApp. Incluye sistema de calificaciones, notificaciones push y un panel administrativo. Además, cuenta con una página web en React y Next.js, garantizando usabilidad, escalabilidad y una experiencia fluida.",
+        "image": "/assets/servicioya.png",
+        "link": "https://appservicioya.com/"
     },
     {
         "id": 2,
         "title": "e-Commerce",
-        "description": "Tienda Online realizada en React.js en FrontEnd y en Laravel y Node.js en BackEnd. Cuenta con un sistema de autenticación, implementación de un carrito de ventas, integración de API de Mercado Pago para realizar pagos dentro de la app en FrontEnd y un panel de administración de ventas, productos y usuarios en BackEnd.",
-        "image": "/assets/imgtienda.JPG",
-        "link": "https://templo-del-futbol-frontend.vercel.app/"
+        "description": "Plataforma de comercio electrónico moderna con frontend en React y backend en Laravel sobre PostgreSQL, que ofrece una API RESTful documentada con Swagger para facilitar la integración y escalabilidad. Cuenta con autenticación segura mediante tokens JWT, gestión avanzada de roles y permisos, paginación y filtros optimizados para manejar grandes volúmenes de datos. Incluye un sistema completo de carrito de compras integrado con Mercado Pago para procesamiento de pagos, junto con control dinámico de stock y un panel administrativo para gestionar productos, usuarios y ventas en tiempo real.",
+        "image": "/assets/ecommerce.png",
+        "link": "https://arce-diz-js.vercel.app/"
     },
     {
         "id": 3,
-        "title": "Servicio Ya",
-        "description": "Aplicación móvil multiplataforma desarrollada con Flutter (mobile) y Laravel (backend), orientada a la gestión de servicios. Permite a los usuarios registrarse como clientes o trabajadores, gestionar perfiles, enviar y recibir solicitudes, y dejar reseñas. Diseñada con foco en usabilidad, escalabilidad y una experiencia fluida.",
-        "image": "/assets/img_servicioya1.jpg",
-        "link": "https://appservicioya.com/"
-    },
-    {
-        "id": 4,
         "title": "Police Chase",
         "description": "Versión personalizada de Pac-Man desarrollada en Java, con interfaz gráfica, manejo de colisiones, control por teclado y lógica concurrente mediante hilos. Se aplicaron patrones de diseño como Singleton, Visitor y Abstract Factory para una estructura flexible y escalable. ",
         "image": "/assets/pac-man.JPG",
-        "link": "https://github.com/ezearce/tdp-proyecto-3"
+        "link": "https://github.com/tomasdg9/tdp-proyecto-3"
+    },
+    {
+        "id": 4,
+        "title": "MOV3S",
+        "description": "Aplicación móvil para Android desarrollada con React Native (Expo), orientada a promover la sustentabilidad y reducir la huella de carbono. Permite a los usuarios crear recorridos a pie o en bicicleta, participar en desafíos y trivias, y generar alertas sobre robos, incidentes u obstrucciones en la vía pública. También incluye un sistema de notificaciones push integradas con Firebase para mantener a los usuarios informados sobre novedades y eventos. Cuenta con una página web informativa desarrollada con Bootstrap Studio, y un backend en PHP con base de datos SQL. Actualmente se encuentra en desarrollo la funcionalidad de auto compartido.",
+        "image": "/assets/mov3s.png",
+        "link": "https://mov3s.com/"
     }
 ]
