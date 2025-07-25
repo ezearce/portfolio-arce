@@ -10,7 +10,7 @@
   }
 
   body {
-    background-color: #1b1b1b;
+    background-color: #2a2b2b;
   }
 
   html {
@@ -19,14 +19,14 @@
 
   /* Navbar */
   .navbar {
-    background-color: #1a1a1a;
+    background-color: rgba(36, 36, 36, 0.9);
     padding: 1rem 2rem;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   
   nav {
@@ -81,14 +81,14 @@
   
   /* Estilo cuando está seleccionado */
   .nav-list li a.selected {
-    color: #bef300;
-    border-bottom: 2px solid #bef300;
+    color: #61ddff;
+    border-bottom: 2px solid #61ddff;
   }
   
   /* Hover */
   .nav-list li a:hover {
-    color: #bef300;
-    border-bottom: 2px solid #bef300;
+    color: #61ddff;
+    border-bottom: 2px solid #61ddff;
   }
   
   /* Estilo del menú hamburguesa */
@@ -104,7 +104,7 @@
   .menu-toggle .bar {
     width: 30px;
     height: 4px;
-    background-color: #bef300;
+    background-color: #61ddff;
     border-radius: 2px;
   }
   

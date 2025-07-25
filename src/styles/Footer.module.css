@@ -1,6 +1,6 @@
 /* Estilos generales del Footer */
 .footer {
-  background-color: #1b1b1b;
+  background-color: rgba(43, 42, 42, 0.9);
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -20,7 +20,7 @@
 
 .name {
   font-weight: bold;
-  color: #bef300; /* Verde muy claro que contrasta elegantemente */
+  color: #61ddff; /* Verde muy claro que contrasta elegantemente */
 }
 
 .copyRight {

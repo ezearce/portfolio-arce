@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #bef300;
+    background-color: #61ddff;
     color: black;
     border: none;
     border-radius: 50%;
@@ -18,7 +18,7 @@
   }
   
   .scrollButton:hover {
-    background-color: #9ecf00;
+    background-color: #61ddff;
     transform: scale(1.1);
   }
   

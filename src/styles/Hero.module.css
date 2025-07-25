@@ -1,23 +1,56 @@
-
 .hero {
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Ajusta la altura según tus necesidades */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
 
-  .hero img {
-    filter: blur(2px); /* Ajusta la intensidad del desenfoque */
-    opacity: 0.5; /* Hace la imagen más tenue */
+.content {
+  max-width: 1000px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.right {
+  flex: 1;
+  text-align: center;
+}
+
+.profileImageWrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-right: 30px;
+}
+
+.profileImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .ctaButton {
   display: inline-block;
-  background-color: #bef300;
+  background-color: #61ddff;
   color: #1a1a1a;
   font-weight: bold;
   padding: 8px 16px;
@@ -25,12 +58,11 @@
   font-size: 0.9rem;
   margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  animation: fadeInEffect 1.2s ease-out forwards;
   text-decoration: none;
 }
 
 .ctaButton:hover {
-  background-color: #0f8f8f;
+  background-color: #61adff;
 }
 
 .downloadSection {
@@ -40,35 +72,30 @@
 .ctaSecondary {
   display: inline-block;
   background-color: transparent;
-  color: #15BABA;
+  color: #61ddff;
   text-decoration: none;
   font-weight: bold;
   padding: 4px 10px;
-  border: 2px solid #15BABA;
+  border: 2px solid #61ddff;
   border-radius: 999px;
   transition: all 0.3s ease;
   font-size: 0.8rem;
 }
 
 .ctaSecondary:hover {
-  background-color: #15BABA;
+  background-color: #61adff;
   color: #1a1a1a;
-}
-
-.content {
-  max-width: 800px;
-  padding: 0 20px;
 }
 
 .title {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 30px;
-  color: #bef300;
+  color: #61ddff;
 }
 
 .cta {
@@ -87,34 +114,16 @@
 
 .professionList {
   list-style: none;
-  padding: 10;  
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Ajusta el valor según necesites */
+  gap: 6px;
+  font-size: 18px;
 }
 
-.subtitle,
-.title,
-.professionList li {
-    opacity: 0; /* Asegura que el texto empiece invisible */
+@media (max-width: 600px) {
+  .profileImageWrapper {
+    margin-right: 0;
+  }
 }
-
-.fadeIn {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: fadeInEffect 1.2s ease-out forwards;
-}
-
-@keyframes fadeInEffect {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-  
