@@ -11,7 +11,7 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <div className={styles.backgroundWrapper}>
         <Image 
-          src="/assets/IMG_9222.jpeg" 
+          src="/assets/contact.jpeg" 
           alt="Mi Foto" 
           fill 
           quality={80}

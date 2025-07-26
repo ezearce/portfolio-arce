@@ -59,7 +59,7 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skills}>
       <Image
-        src="/assets/IMG_9689.jpeg"
+        src="/assets/skills.jpg"
         alt="Fondo habilidades"
         layout="fill"
         objectFit="cover"

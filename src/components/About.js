@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section id="about" className={styles.about} ref={ref}>
       <Image
-        src="/assets/IMG_8423.jpg"
+        src="/assets/aboutme.jpeg"
         alt="Mi Foto"
         layout="fill"
         objectFit="cover"

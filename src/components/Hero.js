@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
       <Image 
-        src="/assets/banner-home.jpg" 
+        src="/assets/home.jpg" 
         alt="Mi Foto" 
         fill                     
         style={{
