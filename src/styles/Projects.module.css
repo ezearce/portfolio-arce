@@ -32,6 +32,34 @@
   z-index: -1;
 }
 
+.sectionDivider {
+  width: 150px;
+  height: 4px;
+  background-color: #61ddff;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+  z-index: 2;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 2;
+}
+
 /* 🔹 Contenedor de proyectos centrado */
 .projectsContainer {
   position: relative;

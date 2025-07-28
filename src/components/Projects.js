@@ -5,10 +5,20 @@ import Link from "next/link";
 import useInView from "@/hooks/useInView"; 
 
 export default function Projects() {
+  const [refTitle, isTitleVisible] = useInView();
+
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.backgroundImage}></div>
-      
+
+      <div
+        ref={refTitle}
+        className={`${styles.headerWrapper} ${isTitleVisible ? styles.fadeIn : ""}`}
+      >
+        <hr className={styles.sectionDivider} />
+        <h2 className={styles.sectionTitle}>Proyectos Destacados</h2>
+      </div>
+
       <div className={styles.projectsContainer}>
         {projectsData.map((project) => {
           const [ref, isVisible] = useInView();
