@@ -19,6 +19,7 @@ export default function Hero() {
           opacity: 0.5,
           pointerEvents: "none",
           position: "absolute",
+          zIndex: 0,
         }}
         quality={80}
         priority
