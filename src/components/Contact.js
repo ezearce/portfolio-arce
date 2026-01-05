@@ -8,7 +8,7 @@ export default function Contact() {
   const [refDescription, isDescVisible] = useInView();
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={`${styles.contact} sectionBg`}>
       <div className={styles.backgroundWrapper}>
         <Image 
           src="/assets/contact.jpeg" 

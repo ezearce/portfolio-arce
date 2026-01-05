@@ -8,7 +8,7 @@ export default function Projects() {
   const [refTitle, isTitleVisible] = useInView();
 
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="projects" className={`${styles.projects} sectionBg`}>
       <div className={styles.backgroundImage}></div>
 
       <div

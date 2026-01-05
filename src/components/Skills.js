@@ -57,7 +57,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className={styles.skills}>
+    <section id="skills" className={`${styles.skills} sectionBg`}>
       <Image
         src="/assets/skills.jpg"
         alt="Fondo habilidades"
