@@ -44,7 +44,8 @@
   }
   
   .card {
-    background: rgba(61, 61, 61, 0.9);
+    background: rgba(20,20,20,0.5);
+    backdrop-filter: blur(6px) saturate(120%);
     border: 1px solid rgba(36, 36, 36, 0.08);
     border-radius: 70px;
     padding: 25px;
@@ -87,6 +88,9 @@
     text-justify: inter-word;
   }
   
+  .skillProgress { height:8px; background:rgba(255,255,255,0.12); border-radius:999px; overflow:hidden; }
+  .skillProgress > i { display:block; height:100%; width:70%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:999px; }
+
   /* 📱 Responsive */
   @media (max-width: 768px) {
     .sectionTitle {
