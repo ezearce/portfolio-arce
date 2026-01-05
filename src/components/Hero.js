@@ -3,53 +3,53 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="hero" className={styles.hero}>
-      <Image
-        src="/assets/home.jpg"
-        alt="Background"
-        fill
-        priority
-        className={styles.bg}
-      />
-
+    <section id="hero" className={`${styles.hero} sectionBg`}>
       <div className={styles.content}>
-        <Image
-          src="/assets/ezequiel.JPG"
-          alt="Ezequiel Arce"
-          width={160}
-          height={160}
-          className={styles.avatar}
-        />
 
-        <h1 className={styles.title}>
-          Hola, soy <span>Ezequiel Arce</span>
-        </h1>
-
-        <h2 className={styles.subtitle}>
-          <span className={styles.line}>Ingeniero en Sistemas de Información</span>
-          <span className={styles.line}>Full Stack Developer</span>
-        </h2>
-
-        {/* acciones principales */}
-        <div className={styles.actions}>
-          <a href="#projects" className={styles.primary}>
-            Ver proyectos
-          </a>
-          <a href="#contact" className={styles.secondary}>
-            Contactarme
-          </a>
+        {/* IZQUIERDA */}
+        <div className={styles.left}>
+          <div className={styles.profileImageWrapper}>
+            <Image
+              src="/assets/ezequiel.JPG"
+              alt="Ezequiel Arce"
+              width={200}
+              height={200}
+              className={`${styles.avatar} ${styles.fade}`}
+            />
+          </div>
         </div>
 
-        {/* acción secundaria */}
-        <div className={styles.cv}>
-          <a
-            href="/CV_Ezequiel_Arce.pdf"
-            download
-            className={styles.cvButton}
-          >
-            Descargar CV
-          </a>
+        {/* DERECHA */}
+        <div className={styles.right}>
+          <h1 className={`${styles.title} ${styles.fadeDelay1}`}>
+            Hola, soy <span>Ezequiel Arce</span>
+          </h1>
+
+          <h2 className={`${styles.subtitle} ${styles.fadeDelay2}`}>
+            <span className={styles.line}>Ingeniero en Sistemas de Información</span>
+            <span className={styles.line}>Full Stack Developer</span>
+          </h2>
+
+          <div className={`${styles.actions} ${styles.fadeDelay3}`}>
+            <a href="#projects" className={styles.primary}>
+              Ver proyectos
+            </a>
+            <a href="#contact" className={styles.secondary}>
+              Contactarme
+            </a>
+          </div>
+
+          <div className={`${styles.cv} ${styles.fadeDelay4}`}>
+            <a
+              href="/CV_Ezequiel_Arce.pdf"
+              download
+              className={styles.cvButton}
+            >
+              Descargar CV
+            </a>
+          </div>
         </div>
+
       </div>
     </section>
   );

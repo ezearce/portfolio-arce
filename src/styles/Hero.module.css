@@ -7,28 +7,40 @@
   text-align: center;
 }
 
-.bg {
-  object-fit: cover;
-  filter: blur(2px) brightness(0.4);
-  z-index: -1;
-}
-
+/* CONTENEDOR GENERAL */
 .content {
-  max-width: 700px;
-  padding: 20px;
+  max-width: 1000px;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
+.left {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.right {
+  flex: 1;
+  text-align: center; 
+}
+
+/* AVATAR */
 .avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #15baba;
 }
 
+/* TEXTO */
 .title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fff;
 }
@@ -41,12 +53,22 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin: 16px 0 28px;
   font-size: 1.4rem;
 }
 
 .line {
-  animation: fadeUp 0.6s ease forwards;
   color: #61ddff;
+}
+
+.profileImageWrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #15baba;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-right: 30px;
 }
 
 @keyframes fadeUp {
@@ -62,24 +84,29 @@
 
 .actions {
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.primary,
-.secondary {
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  gap: 16px;
+  margin-bottom: 12px;
+  justify-content: center; 
 }
 
 .primary {
   background: #15baba;
   color: #111;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
 }
+
+.secondary {
+  border: 2px solid #15baba;
+  color: #15baba;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 
 .primary:hover {
   background: #13a5a5;
@@ -96,18 +123,30 @@
 
 /* CV */
 .cv {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .cvButton {
-  font-size: 0.95rem;
   color: #ccc;
   text-decoration: underline;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .cvButton:hover {
   color: #15baba;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .actions {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -117,5 +156,43 @@
 
   .subtitle {
     font-size: 1.2rem;
+  }
+}
+
+/* base animation */
+.fade,
+.fadeDelay1,
+.fadeDelay2,
+.fadeDelay3,
+.fadeDelay4 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpHero 0.7s ease forwards;
+}
+
+.fade {
+  animation-delay: 0.1s;
+}
+
+.fadeDelay1 {
+  animation-delay: 0.25s;
+}
+
+.fadeDelay2 {
+  animation-delay: 0.4s;
+}
+
+.fadeDelay3 {
+  animation-delay: 0.55s;
+}
+
+.fadeDelay4 {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeUpHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -114,6 +114,16 @@
     border-radius: 2px;
   }
   
+  .sectionBg {
+    background: linear-gradient(
+      90deg,
+      #0b0b0b 0%,
+      #0f2027 15%,
+      #0f2027 85%,
+      #0b0b0b 100%
+    );
+  }
+
   /* Responsivo (Móvil) */
   @media (max-width: 768px) {
     nav {
