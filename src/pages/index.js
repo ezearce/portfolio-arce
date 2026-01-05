@@ -7,26 +7,26 @@ import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import ScrollToTop from '@/components/ScrollToTop';
 import Footer from '@/components/Footer';
+import CustomCursor from '@/components/CustomCursor';
 
 export default function Home() {
   return (
     <>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
+      <CustomCursor />
+
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <title>Ezequiel Arce | Portfolio</title>
       </Head>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Projects/>
+
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
       <Skills />
-      <Contact/>
-      <Footer/>
-      <ScrollToTop/>
+      <Contact />
+      <Footer />
+      <ScrollToTop />
     </>
+
   );
 }

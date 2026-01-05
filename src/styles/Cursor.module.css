@@ -1,0 +1,16 @@
+.customCursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background-color: #15BABA;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+  box-shadow: 0 0 10px rgba(21, 186, 186, 0.6);
+}
+
+.active {
+  transform: translate(-50%, -50%) scale(1.8);
+}
