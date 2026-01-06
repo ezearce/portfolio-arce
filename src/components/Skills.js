@@ -5,56 +5,84 @@ import { MdWeb, MdCloud, MdDesktopMac, MdGroupWork } from "react-icons/md";
 import useInView from "@/hooks/useInView";
 
 export default function Skills() {
-  const skills = [
+
+  const coreSkills = [
     {
       id: 1,
-      name: "Desarrollo Web Backend",
-      description: "+3 años de experiencia en proyectos profesionales, personales, académicos y freelance. Tecnologías principales: PHP (incluye Laravel), Node.js, Java.",
+      name: "Backend Web",
+      description:
+        "Desarrollo de APIs REST y lógica de negocio en entornos productivos. PHP (Laravel), Java (Spring Boot), Node.js.",
       icon: <FaCode />,
     },
     {
       id: 2,
-      name: "Desarrollo Web Frontend",
-      description: "+3 años de experiencia en proyectos profesionales, personales y académicos. Tecnologías principales: React.js, Next.js.",
+      name: "Frontend Web",
+      description:
+        "Aplicaciones web modernas, responsive y mantenibles. React.js, Next.js, Vue.js.",
       icon: <MdWeb />,
     },
     {
       id: 3,
-      name: "Desarrollo de Apps Móviles",
-      description: "+2 años de experiencia en proyectos profesionales, personales y académicos con Kotlin, Flutter y React Native.",
+      name: "Mobile Apps",
+      description:
+        "Desarrollo de aplicaciones móviles multiplataforma y nativas. React Native, Flutter, Kotlin.",
       icon: <FaMobileAlt />,
     },
     {
       id: 4,
       name: "Bases de Datos",
-      description: "SQL, PostgreSQL y MySQL en el ámbito profesional y personal.",
+      description:
+        "Modelado, consultas y optimización en SQL. PostgreSQL, MySQL.",
       icon: <FaDatabase />,
     },
     {
       id: 5,
-      name: "Apps de Escritorio",
-      description: "Aplicaciones en Java aplicando OOP, patrones de diseño y buenas prácticas.",
+      name: "Desktop Apps",
+      description:
+        "Aplicaciones de escritorio en Java aplicando OOP y patrones de diseño.",
       icon: <MdDesktopMac />,
     },
+  ];
+
+  const toolsSkills = [
     {
       id: 6,
       name: "Control de Versiones",
-      description: "Git y GitHub para proyectos colaborativos.",
+      description:
+        "Trabajo colaborativo con Git y GitHub en equipos de desarrollo.",
       icon: <FaTools />,
     },
     {
       id: 7,
       name: "Deploy & Hosting",
-      description: "Deploy en Hostinger, Vercel y otras plataformas productivas.",
+      description:
+        "Deploy de aplicaciones en producción. Vercel, Hostinger, Supabase.",
       icon: <MdCloud />,
     },
     {
       id: 8,
       name: "Metodologías Ágiles",
-      description: "Scrum aplicado en proyectos con herramientas como Trello y Jira.",
+      description:
+        "Trabajo bajo Scrum utilizando herramientas como Jira y Trello.",
       icon: <MdGroupWork />,
     },
   ];
+
+  const renderSkills = (skillsArray) =>
+    skillsArray.map((skill) => {
+      const [ref, isVisible] = useInView();
+      return (
+        <div
+          key={skill.id}
+          ref={ref}
+          className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
+        >
+          <div className={styles.icon}>{skill.icon}</div>
+          <h3 className={styles.title}>{skill.name}</h3>
+          <p className={styles.text}>{skill.description}</p>
+        </div>
+      );
+    });
 
   return (
     <section id="skills" className={`${styles.skills} sectionBg`}>
@@ -67,23 +95,39 @@ export default function Skills() {
         quality={80}
         className={styles.backgroundImage}
       />
+
       <div className={styles.content}>
         <h2 className={styles.sectionTitle}>Habilidades</h2>
+
+        <p className={styles.subtitle}>
+          Tecnologías y herramientas que utilizo en proyectos reales.
+        </p>
+
+        {/* CORE SKILLS */}
+        <h3 className={styles.groupTitle}>Skills Principales</h3>
+        <div className={styles.groupWrapper}>
+          <div className={styles.skillsContainer}>
+            {coreSkills.map((skill) => {
+              const [ref, isVisible] = useInView();
+              return (
+                <div
+                  key={skill.id}
+                  ref={ref}
+                  className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
+                >
+                  <div className={styles.icon}>{skill.icon}</div>
+                  <h3 className={styles.title}>{skill.name}</h3>
+                  <p className={styles.text}>{skill.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* TOOLS & PRACTICES */}
+        <h3 className={styles.groupTitle}>Herramientas y Metodologías</h3>
         <div className={styles.skillsContainer}>
-          {skills.map((skill) => {
-            const [ref, isVisible] = useInView();
-            return (
-              <div
-                key={skill.id}
-                ref={ref}
-                className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
-              >
-                <div className={styles.icon}>{skill.icon}</div>
-                <h3 className={styles.title}>{skill.name}</h3>
-                <p className={styles.text}>{skill.description}</p>
-              </div>
-            );
-          })}
+          {renderSkills(toolsSkills)}
         </div>
       </div>
     </section>

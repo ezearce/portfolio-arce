@@ -1,126 +1,180 @@
 .skills {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    padding: 60px 30px;
-    overflow: hidden;
-  }
-  
-  .backgroundImage {
-    position: absolute !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-    filter: blur(3px);
-    opacity: 0.4;
-    z-index: -1;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    color: rgb(255, 255, 255);
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 20px;
-  }
-  
-  .sectionTitle {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #61ddff;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .skillsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    width: 100%;
-  }
-  
-  .card {
-    background: rgba(20,20,20,0.5);
-    backdrop-filter: blur(6px) saturate(120%);
-    border: 1px solid rgba(36, 36, 36, 0.08);
-    border-radius: 70px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  .card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-  }
-  
-  .fadeIn {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .icon {
-    font-size: 2.2rem;
-    color: #61ddff;
-    margin-bottom: 15px;
-  }
-  
-  .title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #61ddff;
-    margin-bottom: 10px;
-  }
-  
-  .text {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #ddd;
-    text-align: center;
-    text-justify: inter-word;
-  }
-  
-  .skillProgress { height:8px; background:rgba(255,255,255,0.12); border-radius:999px; overflow:hidden; }
-  .skillProgress > i { display:block; height:100%; width:70%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:999px; }
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 30px;
+  overflow: hidden;
+}
 
-  /* 📱 Responsive */
-  @media (max-width: 768px) {
-    .sectionTitle {
-      font-size: 2rem;
-    }
-  
-    .icon {
-      font-size: 1.8rem;
-    }
-  
-    .title {
-      font-size: 1.1rem;
-    }
-  
-    .text {
-      font-size: 0.95rem;
-    }
+.backgroundImage {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  filter: blur(3px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #61ddff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.groupTitle {
+  margin: 60px 0 30px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 600;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 👈 CLAVE */
+  gap: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .skillsContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 480px) {
-    .skills {
-      padding: 40px 20px;
-    }
-  
-    .sectionTitle {
-      font-size: 1.7rem;
-    }
-  
-    .text {
-      font-size: 0.9rem;
-    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .skillsContainer {
+    grid-template-columns: 1fr;
   }
-  
+}
+
+.groupWrapper {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(36, 36, 36, 0.08);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  width: 280px;
+  will-change: transform;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+  background: rgba(26, 26, 26, 0.65);
+}
+
+.card:hover .icon {
+  transform: scale(1.12);
+}
+
+.fadeIn {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.icon {
+  font-size: 2.2rem;
+  color: #61ddff;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #61ddff;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .groupTitle {
+    font-size: 1.4rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 40px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+}

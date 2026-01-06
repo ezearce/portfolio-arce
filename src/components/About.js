@@ -14,21 +14,29 @@ export default function About() {
       >
         <h2 className={styles.title}>Sobre mí</h2>
 
-        <p className={styles.text}>
-          Soy <strong>Ingeniero en Sistemas de Información</strong> y
-          desarrollador <strong>Full Stack</strong>, con experiencia en el
-          desarrollo de aplicaciones web y móviles.
-        </p>
+          <p className={styles.text}>
+            Soy <strong>Ingeniero en Sistemas de Información</strong> y 
+            <strong> Full Stack Developer</strong>, con experiencia real en 
+            el desarrollo de aplicaciones web y móviles en entornos productivos.
+          </p>
 
-        <p className={styles.text}>
-          Me especializo en crear soluciones escalables, mantenibles y
-          centradas en el usuario, aplicando buenas prácticas y tecnologías modernas.
-        </p>
+          <p className={styles.text}>
+            Trabajo principalmente en el desarrollo de aplicaciones web y móviles, 
+            combinando <strong>frontend moderno</strong> con 
+            <strong> backends robustos y APIs REST seguras</strong>, 
+            diseñando bases de datos escalables y arquitecturas mantenibles.
+          </p>
 
-        <p className={styles.text}>
-          Disfruto trabajar en equipo, resolver problemas reales y aprender
-          constantemente para seguir creciendo profesionalmente.
-        </p>
+          <p className={styles.text}>
+            Me enfoco en escribir código limpio, aplicar buenas prácticas y construir productos 
+            que aporten valor real al usuario y al negocio.
+          </p>
+
+          <p className={styles.text}>
+            Disfruto trabajar en equipo bajo metodologías ágiles, 
+            participar en decisiones técnicas y seguir creciendo 
+            como profesional en proyectos desafiantes.
+          </p>
       </div>
     </section>
   );

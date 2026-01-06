@@ -1,31 +1,79 @@
 /* Estilos generales del Footer */
 .footer {
-  background-color: rgba(43, 42, 42, 0.9);
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
   position: relative;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(8px) saturate(120%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 50px 20px 40px;
+  text-align: center;
 }
 
 .footerContent {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .names {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+  font-size: 1.05rem;
+  color: #ddd;
 }
 
 .name {
-  font-weight: bold;
-  color: #61ddff; /* Verde muy claro que contrasta elegantemente */
+  font-weight: 600;
+  color: #61ddff;
+  position: relative;
+}
+
+.name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #61ddff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.name:hover::after {
+  transform: scaleX(1);
 }
 
 .copyRight {
-  font-size: 0.9rem;
-  color: #f2f2f2;
+  font-size: 0.85rem;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.names a:hover {
+  color: #9be8ff;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #61ddff,
+    transparent
+  );
 }
 
 /* Enlaces en el footer */
@@ -43,7 +91,6 @@
   transform: translateY(-2px);
 }
 
-
 .copyRight a:focus {
   outline: none;
   border-bottom: 2px dashed #BFE3D8;
@@ -53,4 +100,14 @@
 .copyRight a:active {
   color: #BFE3D8;
   transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .names {
+    font-size: 1rem;
+  }
+
+  .copyRight {
+    font-size: 0.8rem;
+  }
 }
