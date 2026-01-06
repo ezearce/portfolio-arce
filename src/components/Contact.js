@@ -2,7 +2,7 @@ import styles from "@/styles/Contact.module.css";
 import Image from "next/image";
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 import useInView from "@/hooks/useInView";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -11,6 +11,16 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); 
   const formRef = useRef();
+
+  useEffect(() => {
+    if (!status) return;
+
+    const timer = setTimeout(() => {
+      setStatus(null);
+    }, 4000); 
+
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const sendEmail = (e) => {
     e.preventDefault();

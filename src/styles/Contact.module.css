@@ -158,3 +158,15 @@
   color: #f87171;
   font-size: 0.95rem;
 }
+
+.success,
+.error {
+  opacity: 0;
+  animation: fadeStatus 0.3s ease forwards;
+}
+
+@keyframes fadeStatus {
+  to {
+    opacity: 1;
+  }
+}
