@@ -13,9 +13,14 @@
 
 .title {
   font-size: 1.5rem;
-    font-weight: bold;
-    color: #61ddff;
-    margin-bottom: 10px;
+  font-weight: bold;
+  color: #61ddff;
+  margin-bottom: 12px;
+}
+
+.text {
+  line-height: 1.6;
+  color: #ddd;
 }
 
 /* 🔹 Imagen de fondo separada en un div para evitar problemas */
@@ -113,11 +118,11 @@
 
 .projectImage {
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 
-.projectImage:hover {
-  transform: scale(1.05);
+.card:hover .projectImage {
+  transform: scale(1.08);
 }
 
 /* 📏 Media Queries para que sea responsivo */
@@ -170,4 +175,46 @@
 .fadeIn {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+.projectLinks {
+  margin-top: 14px;
+  display: flex;
+  gap: 14px;
+}
+
+.projectLinks a {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(97, 221, 255, 0.15);
+  color: #61ddff;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.projectLinks a:hover {
+  background: rgba(97, 221, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.githubWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.githubButton {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #61ddff, #4bb8d8);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.githubButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(97, 221, 255, 0.4);
 }

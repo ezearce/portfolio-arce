@@ -2,7 +2,7 @@ import projectsData from '../../public/data/projects.json';
 import styles from "@/styles/Projects.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import useInView from "@/hooks/useInView"; 
+import useInView from "@/hooks/useInView";
 
 export default function Projects() {
   const [refTitle, isTitleVisible] = useInView();
@@ -13,7 +13,9 @@ export default function Projects() {
 
       <div
         ref={refTitle}
-        className={`${styles.headerWrapper} ${isTitleVisible ? styles.fadeIn : ""}`}
+        className={`${styles.headerWrapper} ${
+          isTitleVisible ? styles.fadeIn : ""
+        }`}
       >
         <hr className={styles.sectionDivider} />
         <h2 className={styles.sectionTitle}>Proyectos Destacados</h2>
@@ -27,43 +29,89 @@ export default function Projects() {
             <div
               key={project.id}
               ref={ref}
-              className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
+              className={`${styles.card} ${
+                isVisible ? styles.fadeIn : ""
+              }`}
             >
               <div className={styles.cardContent}>
+                
+                {/* TEXTO */}
                 <div className={styles.textContainer}>
                   <h3 className={styles.title}>{project.title}</h3>
+
                   <p className={styles.text}>
                     {project.description}
                   </p>
+
+                  {/* LINKS A GITHUB (solo si existen) */}
+                  {(project.repoFrontend || project.repoBackend) && (
+                    <div className={styles.projectLinks}>
+                      {project.repoFrontend && (
+                        <Link
+                          href={project.repoFrontend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Frontend
+                        </Link>
+                      )}
+
+                      {project.repoBackend && (
+                        <Link
+                          href={project.repoBackend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Backend
+                        </Link>
+                      )}
+                    </div>
+                  )}
                 </div>
 
+                {/* IMAGEN */}
                 <div className={styles.imageContainer}>
                   {project.link && project.link !== "#" ? (
-                    <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        width={200} 
-                        height={150} 
-                        className={styles.projectImage} 
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={200}
+                        height={150}
+                        className={styles.projectImage}
                       />
                     </Link>
                   ) : (
                     <div className={styles.projectImageWrapper}>
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        width={200} 
-                        height={150} 
-                        className={styles.projectImage} 
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={200}
+                        height={150}
+                        className={styles.projectImage}
                       />
                     </div>
                   )}
                 </div>
+
               </div>
             </div>
           );
         })}
+      </div>
+      <div className={styles.githubWrapper}>
+        <Link
+          href="https://github.com/ezearce"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.githubButton}
+        >
+          Ver más proyectos en GitHub
+        </Link>
       </div>
     </section>
   );

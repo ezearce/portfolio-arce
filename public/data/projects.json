@@ -23,8 +23,16 @@
     {
         "id": 4,
         "title": "MOV3S",
-        "description": "Aplicación móvil para Android desarrollada con React Native (Expo), orientada a promover la sustentabilidad y reducir la huella de carbono. Permite a los usuarios crear recorridos a pie o en bicicleta, participar en desafíos y trivias, y generar alertas sobre robos, incidentes u obstrucciones en la vía pública. También incluye un sistema de notificaciones push integradas con Firebase para mantener a los usuarios informados sobre novedades y eventos. Cuenta con una página web informativa desarrollada con Bootstrap Studio, y un backend en PHP con base de datos SQL. Actualmente se encuentra en desarrollo la funcionalidad de auto compartido.",
+        "description": "Aplicación móvil para Android e IOS desarrollada con React Native (Expo), enfocada en promover la sustentabilidad y reducir la huella de carbono. La app permite crear recorridos a pie, en bicicleta o mediante autocompartido, participar en desafíos y trivias, y generar alertas sobre robos, incidentes u obstrucciones en la vía pública. Integra un chatbot personalizado y notificaciones push mediante Firebase. El ecosistema se completa con una web informativa desarrollada con Bootstrap Studio, un backend en PHP con base de datos SQL, y un dashboard desarrollado en Next.js para el análisis y visualización de datos.",
         "image": "/assets/mov3s.png",
         "link": "https://mov3s.com/"
+    },
+    {
+        "id": 5,
+        "title": "Sistema de Gestión de Ventas y Stock",
+        "description": "Sistema web para supermercados que permite administrar productos, stock y ventas con reglas de negocio estrictas. Implementa carrito de ventas, estados, control transaccional de stock y validaciones desde backend. Arquitectura cliente–servidor con frontend moderno y backend robusto orientado a integridad de datos.",
+        "image": "/assets/supermarket.png",
+        "repoFrontend": "https://github.com/ezearce/supermarket-dash",
+        "repoBackend": "https://github.com/ezearce/system"
     }
 ]
