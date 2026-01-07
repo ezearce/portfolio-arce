@@ -14,3 +14,10 @@
 .active {
   transform: translate(-50%, -50%) scale(1.8);
 }
+
+/* OCULTAR EN DISPOSITIVOS TÁCTILES */
+@media (hover: none) and (pointer: coarse) {
+  .customCursor {
+    display: none;
+  }
+}
