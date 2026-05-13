@@ -29,7 +29,7 @@ export default function ProjectsCarousel() {
     if (!emblaApi) return;
 
     const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedIndex());
+      setSelectedIndex(emblaApi.selectedIndex);
       setCanScrollPrev(emblaApi.canScrollPrev());
       setCanScrollNext(emblaApi.canScrollNext());
     };

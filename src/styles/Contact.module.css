@@ -9,7 +9,20 @@
   padding: 80px 50px;
   text-align: center;
   overflow: hidden;
-  background: var(--bg-primary);
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 50%, #ffffff 100%);
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .icon {
@@ -21,20 +34,26 @@
 
 .title {
   font-size: 2.8rem;
-  color: var(--text-primary);
+  color: #0f172a;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #1f2937 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 10;
 }
 
 .description {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #475569;
   max-width: 700px;
   line-height: 1.8;
+  font-weight: 500;
+  position: relative;
+  z-index: 10;
 }
 
 .contactContainer {
@@ -43,48 +62,51 @@
   gap: 24px;
   margin-top: 40px;
   max-width: 500px;
+  position: relative;
+  z-index: 10;
 }
 
 .card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 1px solid #e2e8f0;
   padding: 28px 24px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-sm);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   width: 100%;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border-color: #3b82f6;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: var(--text-primary);
+  color: #0f172a;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .text {
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: #475569;
+  font-weight: 500;
 }
 
 .link {
   font-size: 1rem;
-  color: var(--accent-primary);
+  color: #3b82f6;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .link:hover {
   text-decoration: underline;
-  color: var(--accent-hover);
+  color: #2563eb;
 }
 
 .card, .title, .description {
