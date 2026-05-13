@@ -5,116 +5,82 @@
   justify-content: center;
   width: 100%;
   min-height: 100vh;
-  padding: 60px 30px;
+  padding: 80px 30px;
   overflow: hidden;
-}
-
-.backgroundImage {
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  filter: blur(3px);
-  opacity: 0.4;
-  z-index: -1;
+  background: var(--bg-primary);
 }
 
 .content {
   position: relative;
   z-index: 1;
-  color: #fff;
   max-width: 1200px;
   width: 100%;
   padding: 0 20px;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #61ddff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
   margin-bottom: 20px;
   text-align: center;
+  background: linear-gradient(135deg, #1f2937 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 60px;
-  color: #ddd;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 70px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .groupTitle {
-  margin: 60px 0 30px;
+  margin: 70px 0 40px;
   text-align: center;
-  font-size: 1.6rem;
-  color: white;
+  font-size: 1.7rem;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 .skillsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 👈 CLAVE */
-  gap: 30px;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .skillsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .skillsContainer {
-    grid-template-columns: 1fr;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .groupWrapper {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
+  display: contents;
 }
 
 .card {
-  background: rgba(20, 20, 20, 0.5);
-  backdrop-filter: blur(6px) saturate(120%);
-  border: 1px solid rgba(36, 36, 36, 0.08);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
-  width: 280px;
   will-change: transform;
 }
 
-@media (max-width: 1024px) {
-  .card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-  }
-}
-
 .card:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
-  background: rgba(26, 26, 26, 0.65);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
 }
 
 .card:hover .icon {
-  transform: scale(1.12);
+  transform: scale(1.15);
+  color: var(--accent-primary);
 }
 
 .fadeIn {
@@ -124,36 +90,47 @@
 }
 
 .icon {
-  font-size: 2.2rem;
-  color: #61ddff;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
 }
 
 .title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #61ddff;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
 }
 
 .text {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* 📱 Responsive */
+@media (max-width: 1024px) {
+  .skillsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .groupTitle {
     font-size: 1.4rem;
   }
 
+  .skillsContainer {
+    grid-template-columns: 1fr;
+  }
+
   .icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .title {
@@ -161,20 +138,28 @@
   }
 
   .text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 24px 18px;
   }
 }
 
 @media (max-width: 480px) {
   .skills {
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
 
   .sectionTitle {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+  }
+
+  .groupTitle {
+    font-size: 1.2rem;
   }
 
   .text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
