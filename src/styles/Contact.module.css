@@ -6,26 +6,25 @@
   justify-content: center;
   width: 100%;
   min-height: 100vh;
-  padding: 50px;
+  padding: 80px 50px;
   text-align: center;
   overflow: hidden;
+  background: linear-gradient(180deg, #0a0e27 0%, #0f1437 50%, #141b3a 100%);
 }
 
-.backgroundWrapper {
+.contact::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(181, 55, 242, 0.06) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-.backgroundImage {
-  object-fit: cover;
-  object-position: top;
-  filter: blur(2px);
-  opacity: 0.5;
-}
 .icon {
   margin-right: 8px;
   vertical-align: middle;
@@ -34,58 +33,80 @@
 }
 
 .title {
-  font-size: 2rem;
-  color: #61ddff;
+  font-size: 2.8rem;
+  color: #e8f0ff;
   margin-bottom: 20px;
+  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 10;
 }
 
 .description {
-  font-size: 1.2rem;
-  color: white;
-  max-width: 600px;
+  font-size: 1.1rem;
+  color: #a8d5ff;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 500;
+  position: relative;
+  z-index: 10;
 }
 
 .contactContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 24px;
+  margin-top: 40px;
+  max-width: 500px;
+  position: relative;
+  z-index: 10;
 }
 
 .card {
-  background: rgba(20,20,20,0.5);
-  backdrop-filter: blur(6px) saturate(120%);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
+  border: 1px solid #1e3a52;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
+  width: 100%;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  border-color: #00d4ff;
 }
 
 .subtitle {
-  font-size: 1.4rem;
-  color: white;
+  font-size: 1.2rem;
+  color: #e8f0ff;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .text {
-  font-size: 1rem;
-  color: white;
+  font-size: 0.95rem;
+  color: #a8d5ff;
+  font-weight: 500;
 }
 
 .link {
   font-size: 1rem;
-  color: #61ddff;
+  color: #00d4ff;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .link:hover {
   text-decoration: underline;
+  color: #ff006e;
 }
 
 .card, .title, .description {
@@ -102,61 +123,83 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 40px;
+  gap: 18px;
+  margin-top: 50px;
   width: 100%;
-  max-width: 400px;
-  background: rgba(20,20,20,0.6);
-  padding: 25px;
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
+  max-width: 500px;
+  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1.5px solid #1e3a52;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.15), inset 0 0 30px rgba(0, 212, 255, 0.05);
+  position: relative;
+  z-index: 10;
 }
 
 .form input,
 .form textarea {
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 8px;
-  padding: 10px;
-  color: white;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(181, 55, 242, 0.05) 100%);
+  border: 1.5px solid #1e3a52;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #e8f0ff;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+  background: rgba(0, 212, 255, 0.1);
 }
 
 .form input::placeholder,
 .form textarea::placeholder {
-  color: #ccc;
+  color: #7c9ccd;
+  font-weight: 500;
 }
 
 .form button {
-  background: #61ddff;
-  color: #000;
+  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
+  color: #0a0e27;
   border: none;
-  padding: 10px;
+  padding: 16px 32px;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(255, 0, 110, 0.3);
+  margin-top: 8px;
 }
 
 .form button:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(255, 0, 110, 0.5);
 }
 
 .form button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .success {
-  margin-top: 10px;
-  color: #4ade80;
+  margin-top: 12px;
+  color: #10b981;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .error {
-  margin-top: 10px;
-  color: #f87171;
+  margin-top: 12px;
+  color: #ef4444;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .success,

@@ -1,5 +1,4 @@
 import styles from "@/styles/Contact.module.css";
-import Image from "next/image";
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 import useInView from "@/hooks/useInView";
 import { useRef, useState, useEffect } from "react";
@@ -48,16 +47,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className={`${styles.contact} sectionBg`}>
-      <div className={styles.backgroundWrapper}>
-        <Image 
-          src="/assets/contact.jpeg" 
-          alt="Mi Foto" 
-          fill 
-          quality={80}
-          className={styles.backgroundImage}
-        />
-      </div>
-
       <h2
         ref={refTitle}
         className={`${styles.title} ${isTitleVisible ? styles.fadeIn : ""}`}
