@@ -97,6 +97,8 @@
   transition: all 0.4s ease;
   position: relative;
   z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .slideContent:hover {
@@ -278,44 +280,10 @@
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
-.navButton:hover:not(.disabled) {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
-  border-color: #3b82f6;
-  transform: scale(1.15);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
-}
-
-.navButton.disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
 .dots {
   display: flex;
   gap: 12px;
   align-items: center;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #cbd5e1;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dot:hover {
-  background: #3b82f6;
-  transform: scale(1.3);
-}
-
-.dot.active {
-  background: #3b82f6;
-  width: 28px;
-  border-radius: 6px;
 }
 
 /* Bottom CTA */
@@ -352,10 +320,14 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .projects {
+    padding: 70px 30px;
+  }
+
   .slideContent {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 30px;
+    padding: 35px;
     min-height: auto;
   }
 
@@ -366,82 +338,66 @@
   .sectionTitle {
     font-size: 2.2rem;
   }
+
+  .imageSection {
+    min-height: 250px;
+  }
 }
 
 @media (max-width: 768px) {
   .projects {
-    padding: 60px 24px;
+    padding: 50px 20px;
+    min-height: auto;
   }
 
   .headerWrapper {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .subtitle {
     font-size: 0.95rem;
   }
 
+  .carouselWrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .embla {
+    overflow: hidden;
+  }
+
   .emblaSlide {
-    padding: 12px;
+    padding: 10px;
+    flex: 0 0 100%;
   }
 
   .slideContent {
-    padding: 24px;
-    gap: 24px;
-  }
-
-  .projectTitle {
-    font-size: 1.5rem;
-  }
-
-  .projectDescription {
-    font-size: 0.9rem;
-  }
-
-  .controls {
-    gap: 20px;
-  }
-
-  .navButton {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-
-  .bottomCta {
-    margin-top: 40px;
-  }
-}
-
-@media (max-width: 600px) {
-  .projects {
-    padding: 50px 16px;
-  }
-
-  .sectionTitle {
-    font-size: 1.7rem;
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .slideContent {
-    padding: 20px;
     grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 20px;
+    min-height: auto;
+    border-radius: 16px;
   }
 
   .projectTitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .projectDescription {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+  }
+
+  .imageSection {
+    min-height: 220px;
+  }
+
+  .projectActions {
+    gap: 12px;
   }
 
   .actionButton {
@@ -449,18 +405,101 @@
     font-size: 0.9rem;
   }
 
+  .controls {
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .navButton {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active {
+    width: 26px;
+  }
+
+  .bottomCta {
+    margin-top: 35px;
+  }
+
+  .ctaText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 40px 16px;
+    min-height: auto;
+  }
+
+  .headerWrapper {
+    margin-bottom: 30px;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .emblaSlide {
+    padding: 8px;
+  }
+
+  .slideContent {
+    padding: 18px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .projectTitle {
+    font-size: 1.2rem;
+  }
+
+  .projectDescription {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .imageSection {
+    min-height: 180px;
+  }
+
+  .actionButton {
+    padding: 11px 22px;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+  }
+
   .repoLink {
     padding: 8px 14px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    flex: 1;
+  }
+
+  .repoLinks {
+    flex-direction: column;
   }
 
   .controls {
     gap: 12px;
+    margin-top: 28px;
   }
 
   .navButton {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     font-size: 1rem;
   }
 
@@ -477,7 +516,66 @@
     width: 20px;
   }
 
+  .bottomCta {
+    margin-top: 28px;
+  }
+
   .ctaText {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .githubButton {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 35px 12px;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .slideContent {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .projectTitle {
+    font-size: 1.1rem;
+  }
+
+  .projectDescription {
+    font-size: 0.75rem;
+  }
+
+  .imageSection {
+    min-height: 160px;
+  }
+
+  .contentSection {
+    gap: 14px;
+  }
+
+  .actionButton {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }
