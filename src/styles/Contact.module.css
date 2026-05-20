@@ -9,7 +9,7 @@
   padding: 80px 50px;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 50%, #ffffff 100%);
+  background: linear-gradient(180deg, #0a0e27 0%, #0f1437 50%, #141b3a 100%);
 }
 
 .contact::before {
@@ -20,8 +20,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(181, 55, 242, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -34,9 +34,9 @@
 
 .title {
   font-size: 2.8rem;
-  color: #0f172a;
+  color: #e8f0ff;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,7 +48,7 @@
 
 .description {
   font-size: 1.1rem;
-  color: #475569;
+  color: #a8d5ff;
   max-width: 700px;
   line-height: 1.8;
   font-weight: 500;
@@ -67,11 +67,11 @@
 }
 
 .card {
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
+  border: 1px solid #1e3a52;
   padding: 28px 24px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
   width: 100%;
   text-align: center;
   transition: all 0.3s ease;
@@ -79,26 +79,26 @@
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
-  border-color: #3b82f6;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  border-color: #00d4ff;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #0f172a;
+  color: #e8f0ff;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .text {
   font-size: 0.95rem;
-  color: #475569;
+  color: #a8d5ff;
   font-weight: 500;
 }
 
 .link {
   font-size: 1rem;
-  color: #3b82f6;
+  color: #00d4ff;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -106,7 +106,7 @@
 
 .link:hover {
   text-decoration: underline;
-  color: #2563eb;
+  color: #ff006e;
 }
 
 .card, .title, .description {
@@ -127,22 +127,22 @@
   margin-top: 50px;
   width: 100%;
   max-width: 500px;
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
   padding: 40px;
   border-radius: 20px;
-  border: 1.5px solid #e2e8f0;
-  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.1);
+  border: 1.5px solid #1e3a52;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.15), inset 0 0 30px rgba(0, 212, 255, 0.05);
   position: relative;
   z-index: 10;
 }
 
 .form input,
 .form textarea {
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-  border: 1.5px solid #e2e8f0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(181, 55, 242, 0.05) 100%);
+  border: 1.5px solid #1e3a52;
   border-radius: 12px;
   padding: 14px 16px;
-  color: #0f172a;
+  color: #e8f0ff;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
@@ -152,35 +152,34 @@
 .form input:focus,
 .form textarea:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-  background: #ffffff;
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+  background: rgba(0, 212, 255, 0.1);
 }
 
 .form input::placeholder,
 .form textarea::placeholder {
-  color: #94a3b8;
+  color: #7c9ccd;
   font-weight: 500;
 }
 
 .form button {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
+  color: #0a0e27;
   border: none;
   padding: 16px 32px;
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(255, 0, 110, 0.3);
   margin-top: 8px;
 }
 
 .form button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(255, 0, 110, 0.5);
 }
 
 .form button:disabled {

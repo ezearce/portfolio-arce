@@ -1,5 +1,4 @@
 import styles from "@/styles/Skills.module.css";
-import Image from "next/image";
 import { FaCode, FaDatabase, FaMobileAlt, FaTools } from "react-icons/fa";
 import { MdWeb, MdCloud, MdDesktopMac, MdGroupWork } from "react-icons/md";
 import useInView from "@/hooks/useInView";
@@ -86,16 +85,6 @@ export default function Skills() {
 
   return (
     <section id="skills" className={`${styles.skills} sectionBg`}>
-      <Image
-        src="/assets/skills.jpg"
-        alt="Fondo habilidades"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="top"
-        quality={80}
-        className={styles.backgroundImage}
-      />
-
       <div className={styles.content}>
         <h2 className={styles.sectionTitle}>Habilidades</h2>
 
