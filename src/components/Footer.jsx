@@ -6,12 +6,11 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <h3 className={styles.brand}>
-          Eze Arce<em>.</em>
+          Ezequiel Arce<em>.</em>
         </h3>
 
         <p className={styles.message}>
-          Hecho con <strong>mate</strong>, código y un poquito de cariño desde
-          Buenos Aires.
+          Diseñado y desarrollado <strong>de cero</strong> por mí mismo.
         </p>
 
         <div className={styles.row}>
@@ -38,11 +37,7 @@ const Footer = () => {
         <div className={styles.divider} />
 
         <p className={styles.copyright}>
-          © {year} Ezequiel Arce. Construido con{' '}
-          <span className={styles.heart} aria-hidden>
-            🧉
-          </span>{' '}
-          en Argentina.
+          © {year} Ezequiel Arce. Todos los derechos reservados.
         </p>
       </div>
     </footer>

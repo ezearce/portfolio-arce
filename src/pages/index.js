@@ -17,7 +17,7 @@ export default function Home() {
         <title>Ezequiel Arce — Full-Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio de Ezequiel Arce. Ingeniero en Sistemas y Full-Stack Developer en Buenos Aires."
+          content="Portfolio de Ezequiel Arce. Ingeniero en Sistemas y Full-Stack Developer."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

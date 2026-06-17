@@ -56,7 +56,7 @@ export default function Navbar() {
           }}
         >
           <span className={styles.brandDot} />
-          Eze Arce
+          Ezequiel Arce
         </a>
 
         <nav>

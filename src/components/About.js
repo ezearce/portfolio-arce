@@ -2,11 +2,11 @@ import styles from '@/styles/About.module.css';
 import useInView from '@/hooks/useInView';
 
 const STICKERS = [
-  { icon: '🧉', title: '5+ años', sub: 'cebando código' },
-  { icon: '🚀', title: '20+ proyectos', sub: 'puestos en producción' },
-  { icon: '⚽', title: 'Hincha', sub: 'de River y la Scaloneta' },
+  { icon: '⚡', title: '5+ años', sub: 'desarrollando software' },
+  { icon: '🚀', title: '20+ proyectos', sub: 'en producción' },
+  { icon: '⚽', title: 'Hincha', sub: 'de River y la Selección' },
   { icon: '🛠️', title: 'Full-stack', sub: 'front · back · móvil' },
-  { icon: '📍', title: 'Buenos Aires', sub: 'Argentina, GMT-3' },
+  { icon: '🌎', title: 'Remoto', sub: 'cualquier zona horaria' },
 ];
 
 export default function About() {
@@ -19,8 +19,8 @@ export default function About() {
         <div className={styles.head}>
           <span className={styles.eyebrow}>~ sobre mí ~</span>
           <h2 className={styles.title}>
-            Construyo software con <em>la misma dedicación</em>
-            <br /> que cebo el primer mate del día.
+            Diseño y construyo <em>productos digitales</em>
+            <br /> que la gente usa todos los días.
           </h2>
         </div>
 
@@ -30,23 +30,22 @@ export default function About() {
             className={`${styles.text} reveal ${textVisible ? 'show' : ''}`}
           >
             <p>
-              Soy <strong>Ezequiel</strong>, Ingeniero en Sistemas y Full-Stack
-              Developer. Hace 5+ años laburo todos los días con código —
-              construyo aplicaciones web y móviles que llegan a producción y
-              que la gente usa de verdad.
+              Soy <strong>Ezequiel</strong>, Ingeniero en Sistemas de
+              Información y Full-Stack Developer. Hace más de 5 años trabajo
+              en el desarrollo de aplicaciones web y móviles que llegan a
+              producción y que generan valor real.
             </p>
             <p>
-              Trabajo principalmente en stacks <strong>React / Next.js</strong>{' '}
-              en el frontend y <strong>Laravel / Node / Spring</strong> en el
-              back. Diseño bases de datos, APIs REST documentadas y
-              arquitecturas que escalan sin romperse cuando entra el primer
-              cliente importante.
+              Mi stack principal es <strong>React / Next.js</strong> en el
+              frontend y <strong>Laravel / Node / Spring</strong> en el back.
+              Diseño bases de datos, APIs REST documentadas y arquitecturas
+              pensadas para escalar y mantenerse en el tiempo.
             </p>
             <p>
-              Me gusta el código limpio, los proyectos con propósito y los
-              equipos donde se puede discutir una decisión técnica con un mate
-              en la mano. Disfruto cuando un detalle bien pensado mejora la
-              experiencia del que usa lo que construí.
+              Me enfoco en el código limpio, en aplicar buenas prácticas y en
+              entender el problema antes de tirar la primera línea. Disfruto
+              trabajar en equipo, participar en decisiones técnicas y crecer
+              en proyectos desafiantes.
             </p>
 
             <blockquote className={styles.quote}>

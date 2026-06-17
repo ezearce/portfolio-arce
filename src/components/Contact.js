@@ -45,10 +45,10 @@ export default function Contact() {
       >
         <span className={styles.eyebrow}>~ contacto ~</span>
         <h2 className={styles.title}>
-          Mandame una <em>postal</em>.
+          Hablemos de tu <em>próximo proyecto</em>.
         </h2>
         <p className={styles.subtitle}>
-          ¿Tenés un proyecto? ¿Una propuesta? ¿Querés cebar un mate virtual?
+          ¿Tenés una propuesta, una idea o una vacante que pueda interesarme?
           Escribime y te respondo en menos de 24hs.
         </p>
       </div>
@@ -59,53 +59,32 @@ export default function Contact() {
           postcardVisible ? 'show' : ''
         }`}
       >
-        {/* Frente — vista de Buenos Aires */}
+        {/* Frente — atardecer (concepto: pausa para conversar al final del día) */}
         <div className={styles.frontSide}>
           <div className={styles.stamp}>
-            <span className={styles.stampEmoji}>🧉</span>
+            <span className={styles.stampEmoji}>☀</span>
             <span className={styles.stampLabel}>
-              Correo
+              Postal
               <br />
-              Argentino
+              2026
             </span>
           </div>
 
           <div className={styles.cityScene}>
             <div>
-              <span className={styles.cityLabel}>desde</span>
+              <span className={styles.cityLabel}>al final del día</span>
               <h3 className={styles.cityName}>
-                Buenos <em>Aires</em>
+                Una <em>pausa</em>
+                <br />
+                para hablar.
               </h3>
             </div>
           </div>
 
-          {/* Skyline simple */}
-          <div className={styles.skyline} aria-hidden>
-            <svg viewBox="0 0 300 60" fill="currentColor">
-              <rect x="0" y="40" width="20" height="20" />
-              <rect x="22" y="30" width="16" height="30" />
-              <rect x="40" y="35" width="22" height="25" />
-              <rect x="64" y="20" width="14" height="40" />
-              <rect x="80" y="28" width="20" height="32" />
-              <rect x="102" y="38" width="14" height="22" />
-              <rect x="118" y="15" width="18" height="45" />
-              <polygon points="127,10 132,15 122,15" />
-              <rect x="138" y="32" width="22" height="28" />
-              <rect x="162" y="25" width="16" height="35" />
-              <rect x="180" y="40" width="18" height="20" />
-              <rect x="200" y="28" width="22" height="32" />
-              <rect x="224" y="22" width="14" height="38" />
-              <rect x="240" y="35" width="20" height="25" />
-              <rect x="262" y="30" width="18" height="30" />
-              <rect x="282" y="38" width="18" height="22" />
-              <rect x="0" y="58" width="300" height="2" />
-            </svg>
-          </div>
-
           <div className={styles.postmark}>
-            Buenos Aires
+            Portfolio
             <br />
-            Argentina
+            · 2026 ·
           </div>
         </div>
 
@@ -131,13 +110,13 @@ export default function Contact() {
             />
             <textarea
               name="message"
-              placeholder="Contame en qué andás…"
+              placeholder="Contame sobre el proyecto…"
               rows={4}
               required
             />
 
             <button type="submit" disabled={loading} className={styles.button}>
-              {loading ? 'Enviando…' : 'Enviar postal'}
+              {loading ? 'Enviando…' : 'Enviar mensaje'}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
               </svg>
@@ -145,7 +124,7 @@ export default function Contact() {
 
             {status === 'success' && (
               <p className={`${styles.status} ${styles.success}`}>
-                ¡Postal enviada! Te respondo en breve.
+                Mensaje enviado. Te respondo en breve.
               </p>
             )}
             {status === 'error' && (
@@ -156,8 +135,8 @@ export default function Contact() {
           </form>
 
           <div className={styles.sender}>
-            <span>De: el que esté del otro lado</span>
-            <em>~ Eze</em>
+            <span>Respuesta en menos de 24hs</span>
+            <em>~ Ezequiel</em>
           </div>
         </div>
       </div>

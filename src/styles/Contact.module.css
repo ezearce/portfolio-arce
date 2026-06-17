@@ -68,15 +68,41 @@
   }
 }
 
-/* Lado izquierdo: vista BsAs */
+/* Lado izquierdo: atardecer real (foto) con gradiente fallback */
 .frontSide {
   background:
-    linear-gradient(160deg, var(--ocre-soft) 0%, var(--accent-soft) 100%);
+    url('/images/sunset.jpg') center/cover no-repeat,
+    linear-gradient(
+      180deg,
+      #1c1b3a 0%,
+      #4a2e5e 22%,
+      #a23a5a 45%,
+      #d65a3c 68%,
+      #e89641 85%,
+      #f0b95e 100%
+    );
   padding: 2rem 1.75rem;
   position: relative;
   overflow: hidden;
   border-radius: 6px 6px 0 0;
-  min-height: 220px;
+  min-height: 320px;
+  color: #f4efe6;
+}
+
+/* Overlay para legibilidad del texto sobre la foto */
+.frontSide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 14, 28, 0.5) 0%,
+    rgba(20, 14, 28, 0.15) 35%,
+    rgba(20, 14, 28, 0.1) 55%,
+    rgba(20, 14, 28, 0.55) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 @media (min-width: 800px) {
@@ -92,42 +118,30 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .cityLabel {
   font-family: var(--font-hand), cursive;
-  font-size: 1.1rem;
-  color: var(--accent);
+  font-size: 1.05rem;
+  color: rgba(244, 239, 230, 0.85);
+  letter-spacing: 0.04em;
 }
 
 .cityName {
   font-family: var(--font-display), serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
   line-height: 1;
-  color: var(--text);
+  color: #faf7f1;
   letter-spacing: -0.02em;
   margin-top: 0.4rem;
   font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144;
+  text-shadow: 0 2px 12px rgba(20, 14, 28, 0.35);
 }
 
 .cityName em {
   font-style: italic;
-  color: var(--accent);
-}
-
-.skyline {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  color: var(--text);
-  opacity: 0.85;
-}
-
-.skyline svg {
-  width: 100%;
-  height: auto;
+  color: #ffe1a8;
 }
 
 .stamp {
@@ -146,43 +160,46 @@
   justify-content: center;
   text-align: center;
   transform: rotate(7deg);
-  z-index: 2;
+  z-index: 3;
 }
 
 .stampEmoji {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
 }
 
 .stampLabel {
   font-family: var(--font-hand), cursive;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--accent);
   line-height: 1.1;
   margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .postmark {
   position: absolute;
   bottom: 1rem;
-  right: 0.5rem;
-  width: 130px;
-  height: 130px;
+  right: 0.6rem;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  border: 2px solid color-mix(in srgb, var(--text) 50%, transparent);
+  border: 2px solid rgba(244, 239, 230, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: var(--font-hand), cursive;
-  font-size: 0.8rem;
-  color: color-mix(in srgb, var(--text) 55%, transparent);
+  font-size: 0.75rem;
+  color: rgba(244, 239, 230, 0.7);
   transform: rotate(-12deg);
-  opacity: 0.4;
   pointer-events: none;
-  z-index: 2;
-  padding: 1rem;
+  z-index: 3;
+  padding: 0.6rem;
   line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Lado derecho: form */

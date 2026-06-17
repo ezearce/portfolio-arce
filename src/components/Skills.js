@@ -14,7 +14,7 @@ const SKILLS = [
   {
     id: 1,
     name: 'Frontend Web',
-    position: 'mediocampista creativo',
+    category: 'interfaces',
     stack: ['React', 'Next.js', 'Vue'],
     icon: <FaReact />,
     rare: true,
@@ -22,21 +22,21 @@ const SKILLS = [
   {
     id: 2,
     name: 'Backend Web',
-    position: 'volante central',
+    category: 'apis & servicios',
     stack: ['Laravel', 'Spring', 'Node'],
     icon: <FaServer />,
   },
   {
     id: 3,
     name: 'Mobile Apps',
-    position: 'extremo veloz',
+    category: 'multiplataforma',
     stack: ['React Native', 'Flutter', 'Kotlin'],
     icon: <FaMobileAlt />,
   },
   {
     id: 4,
     name: 'Bases de Datos',
-    position: 'defensor central',
+    category: 'modelado & queries',
     stack: ['PostgreSQL', 'MySQL', 'MongoDB'],
     icon: <FaDatabase />,
     rare: true,
@@ -44,28 +44,28 @@ const SKILLS = [
   {
     id: 5,
     name: 'Desktop Apps',
-    position: 'lateral todoterreno',
-    stack: ['Java', 'OOP', 'patrones'],
+    category: 'oop & patrones',
+    stack: ['Java', 'Swing', 'JavaFX'],
     icon: <FaCode />,
   },
   {
     id: 6,
     name: 'DevOps & Deploy',
-    position: 'arquero confiable',
+    category: 'infraestructura',
     stack: ['Vercel', 'Supabase', 'Hostinger'],
     icon: <MdCloud />,
   },
   {
     id: 7,
     name: 'Git & GitHub',
-    position: 'capitán de equipo',
+    category: 'versionado',
     stack: ['Git', 'PRs', 'flow'],
     icon: <FaTools />,
   },
   {
     id: 8,
     name: 'Agile / Scrum',
-    position: 'DT del proyecto',
+    category: 'metodología',
     stack: ['Jira', 'Trello', 'Scrum'],
     icon: <MdGroupWork />,
     rare: true,
@@ -83,7 +83,7 @@ function Sticker({ skill, idx }) {
       style={{ transitionDelay: `${(idx % 4) * 0.08}s` }}
     >
       <div className={styles.topRow}>
-        <span className={styles.position}>{skill.position}</span>
+        <span className={styles.position}>{skill.category}</span>
         <span className={styles.number}>
           {String(idx + 1).padStart(2, '0')}
         </span>
@@ -116,10 +116,11 @@ export default function Skills() {
       >
         <span className={styles.eyebrow}>~ skills ~</span>
         <h2 className={styles.title}>
-          Mi <em>once ideal</em> de tecnologías.
+          Stack & <em>especialidades</em>.
         </h2>
         <p className={styles.subtitle}>
-          Las figuritas difíciles de pegar. Estas las tengo todas.
+          Las tecnologías con las que trabajo todos los días en proyectos
+          reales.
         </p>
       </div>
 
@@ -130,8 +131,8 @@ export default function Skills() {
       </div>
 
       <p className={styles.albumFooter}>
-        ¿Faltó alguna? Si tu stack es <strong>medio raro</strong>, mandame un
-        mensaje y vemos.
+        ¿Trabajás con un stack diferente? <strong>Hablemos igual</strong> — me
+        adapto al contexto del proyecto.
       </p>
     </section>
   );

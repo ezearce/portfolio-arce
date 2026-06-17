@@ -50,11 +50,12 @@ export default function ProjectsCarousel() {
       >
         <span className={styles.eyebrow}>~ proyectos ~</span>
         <h2 className={styles.title}>
-          Cosas que <em>construí</em> con código.
+          Trabajos <em>seleccionados</em>.
         </h2>
         <p className={styles.subtitle}>
-          Una selección de proyectos en los que trabajé — desde apps móviles
-          que conectan personas hasta plataformas con miles de productos.
+          Una muestra de proyectos en los que participé end-to-end —
+          aplicaciones móviles, plataformas web y sistemas que están en
+          producción y siguen activos.
         </p>
       </div>
 
@@ -182,7 +183,7 @@ export default function ProjectsCarousel() {
       </div>
 
       <div className={styles.bottomCta}>
-        <p className={styles.ctaText}>¿Querés ver más? Tengo el repo lleno.</p>
+        <p className={styles.ctaText}>¿Querés ver más? Visita mi repositorio.</p>
         <Link
           href="https://github.com/ezearce"
           target="_blank"

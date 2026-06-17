@@ -143,12 +143,14 @@
 }
 
 .position {
-  font-family: var(--font-hand), cursive;
-  font-size: 0.8rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.66rem;
+  font-weight: 500;
   color: var(--accent);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   background: var(--accent-soft);
-  padding: 0.2rem 0.6rem;
+  padding: 0.3rem 0.65rem;
   border-radius: 999px;
 }
 

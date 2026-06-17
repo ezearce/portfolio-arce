@@ -1,10 +1,30 @@
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from '@/styles/Hero.module.css';
 
-const MateScene = dynamic(() => import('./MateScene'), {
-  ssr: false,
-  loading: () => <div className={styles.sceneFallback}>Preparando el mate…</div>,
-});
+const PHOTOS = [
+  {
+    src: '/assets/ezequiel.JPG',
+    alt: 'Ezequiel Arce',
+    caption: '~ yo',
+    rotate: -7,
+    pos: { top: '0', left: '0', zIndex: 3 },
+  },
+  {
+    src: '/assets/projects.jpg',
+    alt: 'mate',
+    caption: 'work',
+    rotate: 5,
+    pos: { top: '55px', right: '0', zIndex: 2 },
+  },
+  {
+    src: '/images/mate.jpg',
+    alt: 'partido',
+    caption: 'hobbie',
+    rotate: -3,
+    pos: { bottom: '0', left: '70px', zIndex: 1 },
+  },
+];
 
 export default function Hero() {
   return (
@@ -14,28 +34,25 @@ export default function Hero() {
 
       <div className={styles.inner}>
         <div className={styles.left}>
-          <span className={styles.eyebrow}>Bienvenidos al mate</span>
+          <span className={styles.eyebrow}>portfolio · 2026</span>
 
           <h1 className={styles.title}>
-            Eze Arce<span className={styles.accent}>.</span>
+            Ezequiel Arce<span className={styles.accent}>.</span>
             <br />
-            Construyo cosas
+            Ingeniería de
             <br />
-            <span className={styles.accent}>en internet.</span>
+            <span className={styles.accent}>software.</span>
           </h1>
 
           <div className={styles.subtitle}>
-            <span className={styles.pill}>
-              <span className={styles.dot} />
-              Disponible para proyectos
-            </span>
-            <span>Ing. en Sistemas · Full-Stack Dev · Buenos Aires</span>
+            <span>Ingeniero en Sistemas · Full-Stack Developer</span>
           </div>
 
           <p className={styles.description}>
-            Diseño y construyo <strong>aplicaciones web y móviles</strong> que
-            la gente realmente usa. Me gusta el código prolijo, los proyectos
-            con propósito y los mates largos mientras pienso una arquitectura.
+            Ingeniero en Sistemas con más de <strong>5 años de experiencia</strong>{' '}
+            desarrollando aplicaciones web y móviles para entornos productivos.
+            Combino frontend moderno, backend robusto y bases de datos pensadas
+            para escalar — desde el modelado hasta el deploy.
           </p>
 
           <div className={styles.actions}>
@@ -46,7 +63,7 @@ export default function Hero() {
               </svg>
             </a>
             <a href="#contact" className={styles.secondary}>
-              Cebame un mate
+              Conversemos
             </a>
           </div>
 
@@ -59,13 +76,40 @@ export default function Hero() {
         </div>
 
         <div className={styles.right}>
-          <MateScene />
+          <div className={styles.photoStack}>
+            {PHOTOS.map((photo, i) => (
+              <motion.div
+                key={photo.src}
+                className={styles.polaroid}
+                style={photo.pos}
+                initial={{ rotate: photo.rotate, opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + i * 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
+                drag
+                dragConstraints={{ left: -60, right: 60, top: -40, bottom: 40 }}
+                dragElastic={0.35}
+                dragTransition={{ bounceStiffness: 320, bounceDamping: 22 }}
+              >
+                <div className={styles.polaroidPhoto}>
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="240px"
+                    quality={88}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <span className={styles.caption}>{photo.caption}</span>
+              </motion.div>
+            ))}
+          </div>
           <span className={styles.sceneHint}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 12c0-4 3-7 9-7s9 3 9 7-3 7-9 7-9-3-9-7z" />
-              <path d="M9 12h6" />
+              <path d="M9 11l3-3 3 3M9 8h6M9 16l3 3 3-3M9 19h6" />
             </svg>
-            arrastrá para mover la escena
+            arrastrá las fotos
           </span>
         </div>
       </div>
