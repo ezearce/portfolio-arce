@@ -1,124 +1,138 @@
-import styles from "@/styles/Skills.module.css";
-import { FaCode, FaDatabase, FaMobileAlt, FaTools } from "react-icons/fa";
-import { MdWeb, MdCloud, MdDesktopMac, MdGroupWork } from "react-icons/md";
-import useInView from "@/hooks/useInView";
+import styles from '@/styles/Skills.module.css';
+import {
+  FaCode,
+  FaDatabase,
+  FaMobileAlt,
+  FaTools,
+  FaReact,
+  FaServer,
+} from 'react-icons/fa';
+import { MdCloud, MdGroupWork } from 'react-icons/md';
+import useInView from '@/hooks/useInView';
 
-export default function Skills() {
+const SKILLS = [
+  {
+    id: 1,
+    name: 'Frontend Web',
+    position: 'mediocampista creativo',
+    stack: ['React', 'Next.js', 'Vue'],
+    icon: <FaReact />,
+    rare: true,
+  },
+  {
+    id: 2,
+    name: 'Backend Web',
+    position: 'volante central',
+    stack: ['Laravel', 'Spring', 'Node'],
+    icon: <FaServer />,
+  },
+  {
+    id: 3,
+    name: 'Mobile Apps',
+    position: 'extremo veloz',
+    stack: ['React Native', 'Flutter', 'Kotlin'],
+    icon: <FaMobileAlt />,
+  },
+  {
+    id: 4,
+    name: 'Bases de Datos',
+    position: 'defensor central',
+    stack: ['PostgreSQL', 'MySQL', 'MongoDB'],
+    icon: <FaDatabase />,
+    rare: true,
+  },
+  {
+    id: 5,
+    name: 'Desktop Apps',
+    position: 'lateral todoterreno',
+    stack: ['Java', 'OOP', 'patrones'],
+    icon: <FaCode />,
+  },
+  {
+    id: 6,
+    name: 'DevOps & Deploy',
+    position: 'arquero confiable',
+    stack: ['Vercel', 'Supabase', 'Hostinger'],
+    icon: <MdCloud />,
+  },
+  {
+    id: 7,
+    name: 'Git & GitHub',
+    position: 'capitán de equipo',
+    stack: ['Git', 'PRs', 'flow'],
+    icon: <FaTools />,
+  },
+  {
+    id: 8,
+    name: 'Agile / Scrum',
+    position: 'DT del proyecto',
+    stack: ['Jira', 'Trello', 'Scrum'],
+    icon: <MdGroupWork />,
+    rare: true,
+  },
+];
 
-  const coreSkills = [
-    {
-      id: 1,
-      name: "Backend Web",
-      description:
-        "Desarrollo de APIs REST y lógica de negocio en entornos productivos. PHP (Laravel), Java (Spring Boot), Node.js.",
-      icon: <FaCode />,
-    },
-    {
-      id: 2,
-      name: "Frontend Web",
-      description:
-        "Aplicaciones web modernas, responsive y mantenibles. React.js, Next.js, Vue.js.",
-      icon: <MdWeb />,
-    },
-    {
-      id: 3,
-      name: "Mobile Apps",
-      description:
-        "Desarrollo de aplicaciones móviles multiplataforma y nativas. React Native, Flutter, Kotlin.",
-      icon: <FaMobileAlt />,
-    },
-    {
-      id: 4,
-      name: "Bases de Datos",
-      description:
-        "Modelado, consultas y optimización en SQL. PostgreSQL, MySQL.",
-      icon: <FaDatabase />,
-    },
-    {
-      id: 5,
-      name: "Desktop Apps",
-      description:
-        "Aplicaciones de escritorio en Java aplicando OOP y patrones de diseño.",
-      icon: <MdDesktopMac />,
-    },
-  ];
-
-  const toolsSkills = [
-    {
-      id: 6,
-      name: "Control de Versiones",
-      description:
-        "Trabajo colaborativo con Git y GitHub en equipos de desarrollo.",
-      icon: <FaTools />,
-    },
-    {
-      id: 7,
-      name: "Deploy & Hosting",
-      description:
-        "Deploy de aplicaciones en producción. Vercel, Hostinger, Supabase.",
-      icon: <MdCloud />,
-    },
-    {
-      id: 8,
-      name: "Metodologías Ágiles",
-      description:
-        "Trabajo bajo Scrum utilizando herramientas como Jira y Trello.",
-      icon: <MdGroupWork />,
-    },
-  ];
-
-  const renderSkills = (skillsArray) =>
-    skillsArray.map((skill) => {
-      const [ref, isVisible] = useInView();
-      return (
-        <div
-          key={skill.id}
-          ref={ref}
-          className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
-        >
-          <div className={styles.icon}>{skill.icon}</div>
-          <h3 className={styles.title}>{skill.name}</h3>
-          <p className={styles.text}>{skill.description}</p>
-        </div>
-      );
-    });
-
+function Sticker({ skill, idx }) {
+  const [ref, visible] = useInView({ threshold: 0.2 });
   return (
-    <section id="skills" className={`${styles.skills} sectionBg`}>
-      <div className={styles.content}>
-        <h2 className={styles.sectionTitle}>Habilidades</h2>
+    <div
+      ref={ref}
+      className={`${styles.sticker} ${skill.rare ? styles.rare : ''} ${
+        visible ? styles.show : ''
+      }`}
+      style={{ transitionDelay: `${(idx % 4) * 0.08}s` }}
+    >
+      <div className={styles.topRow}>
+        <span className={styles.position}>{skill.position}</span>
+        <span className={styles.number}>
+          {String(idx + 1).padStart(2, '0')}
+        </span>
+      </div>
 
-        <p className={styles.subtitle}>
-          Tecnologías y herramientas que utilizo en proyectos reales.
-        </p>
+      <div className={styles.iconWrapper}>{skill.icon}</div>
 
-        {/* CORE SKILLS */}
-        <h3 className={styles.groupTitle}>Skills Principales</h3>
-        <div className={styles.groupWrapper}>
-          <div className={styles.skillsContainer}>
-            {coreSkills.map((skill) => {
-              const [ref, isVisible] = useInView();
-              return (
-                <div
-                  key={skill.id}
-                  ref={ref}
-                  className={`${styles.card} ${isVisible ? styles.fadeIn : ""}`}
-                >
-                  <div className={styles.icon}>{skill.icon}</div>
-                  <h3 className={styles.title}>{skill.name}</h3>
-                  <p className={styles.text}>{skill.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* TOOLS & PRACTICES */}
-        <h3 className={styles.groupTitle}>Herramientas y Metodologías</h3>
-        <div className={styles.skillsContainer}>
-          {renderSkills(toolsSkills)}
+      <div className={styles.bottom}>
+        <h3 className={styles.skillName}>{skill.name}</h3>
+        <div className={styles.skillStack}>
+          {skill.stack.map((tech) => (
+            <span key={tech} className={styles.tag}>
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+export default function Skills() {
+  const [headRef, headVisible] = useInView();
+
+  return (
+    <section id="skills" className={styles.skills}>
+      <div
+        ref={headRef}
+        className={`${styles.head} reveal ${headVisible ? 'show' : ''}`}
+      >
+        <span className={styles.eyebrow}>~ skills ~</span>
+        <h2 className={styles.title}>
+          Mi <em>once ideal</em> de tecnologías.
+        </h2>
+        <p className={styles.subtitle}>
+          Las figuritas difíciles de pegar. Estas las tengo todas.
+        </p>
+      </div>
+
+      <div className={styles.album}>
+        {SKILLS.map((skill, idx) => (
+          <Sticker key={skill.id} skill={skill} idx={idx} />
+        ))}
+      </div>
+
+      <p className={styles.albumFooter}>
+        ¿Faltó alguna? Si tu stack es <strong>medio raro</strong>, mandame un
+        mensaje y vemos.
+      </p>
     </section>
   );
 }

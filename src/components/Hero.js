@@ -1,61 +1,73 @@
-import styles from "@/styles/Hero.module.css";
-import Image from "next/image";
+import dynamic from 'next/dynamic';
+import styles from '@/styles/Hero.module.css';
+
+const MateScene = dynamic(() => import('./MateScene'), {
+  ssr: false,
+  loading: () => <div className={styles.sceneFallback}>Preparando el mate…</div>,
+});
 
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.content}>
+      <div className={styles.bgShape} aria-hidden />
+      <div className={styles.bgShape2} aria-hidden />
 
-        {/* IZQUIERDA - Avatar */}
+      <div className={styles.inner}>
         <div className={styles.left}>
-          <div className={styles.profileImageWrapper}>
-            <Image
-              src="/assets/ezequiel.JPG"
-              alt="Ezequiel Arce - Full Stack Developer"
-              width={240}
-              height={240}
-              priority
-              quality={95}
-              className={`${styles.avatar} ${styles.fade}`}
-            />
-          </div>
-        </div>
+          <span className={styles.eyebrow}>Bienvenidos al mate</span>
 
-        {/* DERECHA - Contenido */}
-        <div className={styles.right}>
-          <h1 className={`${styles.title} ${styles.fadeDelay1}`}>
-            Hola, soy <span>Ezequiel Arce</span>
+          <h1 className={styles.title}>
+            Eze Arce<span className={styles.accent}>.</span>
+            <br />
+            Construyo cosas
+            <br />
+            <span className={styles.accent}>en internet.</span>
           </h1>
 
-          <h2 className={`${styles.subtitle} ${styles.fadeDelay2}`}>
-            <span className={styles.line}>Ingeniero en Sistemas de Información</span>
-            <span className={styles.line}>Full Stack Developer</span>
-          </h2>
+          <div className={styles.subtitle}>
+            <span className={styles.pill}>
+              <span className={styles.dot} />
+              Disponible para proyectos
+            </span>
+            <span>Ing. en Sistemas · Full-Stack Dev · Buenos Aires</span>
+          </div>
 
-          <p className={`${styles.description} ${styles.fadeDelay2}`}>
-            Especializado en construir aplicaciones web modernas, escalables y de alto rendimiento. Transformo ideas en soluciones digitales elegantes.
+          <p className={styles.description}>
+            Diseño y construyo <strong>aplicaciones web y móviles</strong> que
+            la gente realmente usa. Me gusta el código prolijo, los proyectos
+            con propósito y los mates largos mientras pienso una arquitectura.
           </p>
 
-          <div className={`${styles.actions} ${styles.fadeDelay3}`}>
+          <div className={styles.actions}>
             <a href="#projects" className={styles.primary}>
               Ver proyectos
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </a>
             <a href="#contact" className={styles.secondary}>
-              Contactarme
+              Cebame un mate
             </a>
           </div>
 
-          <div className={`${styles.cv} ${styles.fadeDelay4}`}>
-            <a
-              href="/CV_Ezequiel_Arce.pdf"
-              download
-              className={styles.cvButton}
-            >
-              Descargar CV
-            </a>
-          </div>
+          <a href="/CV_Ezequiel_Arce.pdf" download className={styles.cv}>
+            Descargar CV
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+          </a>
         </div>
 
+        <div className={styles.right}>
+          <MateScene />
+          <span className={styles.sceneHint}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 12c0-4 3-7 9-7s9 3 9 7-3 7-9 7-9-3-9-7z" />
+              <path d="M9 12h6" />
+            </svg>
+            arrastrá para mover la escena
+          </span>
+        </div>
       </div>
     </section>
   );

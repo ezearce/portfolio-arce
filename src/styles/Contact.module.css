@@ -1,215 +1,342 @@
 .contact {
+  padding: 7rem 1.5rem;
+  background: var(--bg);
   position: relative;
+  overflow: hidden;
+}
+
+.head {
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-hand), cursive;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.title {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--text);
+  font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 38rem;
+}
+
+/* Postal */
+.postcard {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--border);
+  transform: rotate(-0.6deg);
+  transition: transform 0.5s ease;
+}
+
+.postcard:hover {
+  transform: rotate(0deg);
+}
+
+@media (min-width: 800px) {
+  .postcard {
+    grid-template-columns: 0.85fr 1.15fr;
+    min-height: 460px;
+  }
+}
+
+/* Lado izquierdo: vista BsAs */
+.frontSide {
+  background:
+    linear-gradient(160deg, var(--ocre-soft) 0%, var(--accent-soft) 100%);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+  min-height: 220px;
+}
+
+@media (min-width: 800px) {
+  .frontSide {
+    border-radius: 6px 0 0 6px;
+    border-right: 1px dashed var(--border-strong);
+  }
+}
+
+.cityScene {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.cityLabel {
+  font-family: var(--font-hand), cursive;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.cityName {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-top: 0.4rem;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144;
+}
+
+.cityName em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.skyline {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.skyline svg {
+  width: 100%;
+  height: auto;
+}
+
+.stamp {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 90px;
+  height: 110px;
+  background: var(--surface);
+  border: 2px dashed var(--accent);
+  border-radius: 4px;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  padding: 80px 50px;
   text-align: center;
-  overflow: hidden;
-  background: linear-gradient(180deg, #0a0e27 0%, #0f1437 50%, #141b3a 100%);
+  transform: rotate(7deg);
+  z-index: 2;
 }
 
-.contact::before {
-  content: '';
+.stampEmoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.stampLabel {
+  font-family: var(--font-hand), cursive;
+  font-size: 0.75rem;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-top: 0.3rem;
+}
+
+.postmark {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(181, 55, 242, 0.06) 0%, transparent 50%);
+  bottom: 1rem;
+  right: 0.5rem;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--text) 50%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-hand), cursive;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--text) 55%, transparent);
+  transform: rotate(-12deg);
+  opacity: 0.4;
   pointer-events: none;
+  z-index: 2;
+  padding: 1rem;
+  line-height: 1.2;
 }
 
-.icon {
-  margin-right: 8px;
-  vertical-align: middle;
-  font-size: 1.2rem;
-  width: 25px;
-}
-
-.title {
-  font-size: 2.8rem;
-  color: #e8f0ff;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  position: relative;
-  z-index: 10;
-}
-
-.description {
-  font-size: 1.1rem;
-  color: #a8d5ff;
-  max-width: 700px;
-  line-height: 1.8;
-  font-weight: 500;
-  position: relative;
-  z-index: 10;
-}
-
-.contactContainer {
+/* Lado derecho: form */
+.backSide {
+  padding: 2rem 2rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 40px;
-  max-width: 500px;
+  gap: 1rem;
   position: relative;
-  z-index: 10;
 }
 
-.card {
-  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
-  border: 1px solid #1e3a52;
-  padding: 28px 24px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
-  width: 100%;
-  text-align: center;
-  transition: all 0.3s ease;
+.recipient {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 212, 255, 0.1);
-  border-color: #00d4ff;
+.recipientLabel {
+  font-family: var(--font-hand), cursive;
+  font-size: 0.85rem;
+  color: var(--text-soft);
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #e8f0ff;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.text {
-  font-size: 0.95rem;
-  color: #a8d5ff;
-  font-weight: 500;
-}
-
-.link {
-  font-size: 1rem;
-  color: #00d4ff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.link:hover {
-  text-decoration: underline;
-  color: #ff006e;
-}
-
-.card, .title, .description {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fadeIn {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+.recipientName {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 50px;
-  width: 100%;
-  max-width: 500px;
-  background: linear-gradient(135deg, #0f1437 0%, #141b3a 100%);
-  padding: 40px;
-  border-radius: 20px;
-  border: 1.5px solid #1e3a52;
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.15), inset 0 0 30px rgba(0, 212, 255, 0.05);
-  position: relative;
-  z-index: 10;
+  gap: 0.75rem;
 }
 
 .form input,
 .form textarea {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(181, 55, 242, 0.05) 100%);
-  border: 1.5px solid #1e3a52;
-  border-radius: 12px;
-  padding: 14px 16px;
-  color: #e8f0ff;
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.form input:focus,
-.form textarea:focus {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px dashed var(--border-strong);
+  padding: 0.55rem 0.1rem;
+  color: var(--text);
+  transition: border-color 0.3s ease;
   outline: none;
-  border-color: #00d4ff;
-  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
-  background: rgba(0, 212, 255, 0.1);
+  resize: none;
 }
 
 .form input::placeholder,
 .form textarea::placeholder {
-  color: #7c9ccd;
+  color: var(--text-soft);
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-bottom-color: var(--accent);
+  border-bottom-style: solid;
+}
+
+.button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #faf7f1;
+  border-radius: 999px;
   font-weight: 500;
-}
-
-.form button {
-  background: linear-gradient(135deg, #00d4ff 0%, #ff006e 100%);
-  color: #0a0e27;
-  border: none;
-  padding: 16px 32px;
-  font-size: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 700;
+  margin-top: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(255, 0, 110, 0.3);
-  margin-top: 8px;
+  box-shadow: var(--shadow-warm);
 }
 
-.form button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(255, 0, 110, 0.5);
+.button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
-.form button:disabled {
+.button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  transform: none;
 }
 
-.success {
-  margin-top: 12px;
-  color: #10b981;
+.status {
+  font-family: var(--font-hand), cursive;
   font-size: 0.95rem;
-  font-weight: 500;
+  margin-top: 0.5rem;
 }
 
-.error {
-  margin-top: 12px;
-  color: #ef4444;
+.success { color: var(--yerba); }
+.error { color: var(--accent); }
+
+.sender {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-hand), cursive;
   font-size: 0.95rem;
-  font-weight: 500;
+  color: var(--text-muted);
 }
 
-.success,
-.error {
-  opacity: 0;
-  animation: fadeStatus 0.3s ease forwards;
+.sender em {
+  color: var(--accent);
+  font-style: italic;
 }
 
-@keyframes fadeStatus {
-  to {
-    opacity: 1;
-  }
+/* Tarjetas de contacto debajo */
+.cards {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
+
+@media (min-width: 600px) { .cards { grid-template-columns: 1fr 1fr; } }
+
+.cardLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.cardLink:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardIcon {
+  font-size: 1.6rem;
+  color: var(--accent);
+  display: inline-flex;
+}
+
+.cardText { display: flex; flex-direction: column; }
+.cardTitle {
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.cardSub { font-size: 0.85rem; color: var(--text-muted); }

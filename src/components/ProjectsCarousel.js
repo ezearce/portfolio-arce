@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import projectsData from '../../public/data/projects.json';
@@ -10,39 +10,31 @@ import Link from 'next/link';
 import useInView from '@/hooks/useInView';
 
 export default function ProjectsCarousel() {
-  const [refTitle, isTitleVisible] = useInView();
+  const [headRef, headVisible] = useInView();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      align: 'center',
-      skipSnaps: false,
-    },
-    [Autoplay({ delay: 6000, stopOnInteraction: true })]
+    { loop: true, align: 'center', skipSnaps: false },
+    [Autoplay({ delay: 7000, stopOnInteraction: true })]
   );
 
   useEffect(() => {
     if (!emblaApi) return;
-
     const onSelect = () => {
       setSelectedIndex(emblaApi.selectedIndex);
       setCanScrollPrev(emblaApi.canScrollPrev());
       setCanScrollNext(emblaApi.canScrollNext());
     };
-
     const onInit = () => {
       setScrollSnaps(emblaApi.scrollSnapList());
       onSelect();
     };
-
     emblaApi.on('init', onInit);
     emblaApi.on('reInit', onInit);
     emblaApi.on('select', onSelect);
-
     return () => {
       emblaApi.off('init', onInit);
       emblaApi.off('reInit', onInit);
@@ -50,39 +42,28 @@ export default function ProjectsCarousel() {
     };
   }, [emblaApi]);
 
-  const onPrevButtonClick = () => {
-    if (emblaApi) emblaApi.scrollPrev();
-  };
-
-  const onNextButtonClick = () => {
-    if (emblaApi) emblaApi.scrollNext();
-  };
-
-  const onDotClick = (index) => {
-    if (emblaApi) emblaApi.scrollTo(index);
-  };
-
   return (
     <section id="projects" className={styles.projects}>
       <div
-        ref={refTitle}
-        className={`${styles.headerWrapper} ${
-          isTitleVisible ? styles.fadeIn : ''
-        }`}
+        ref={headRef}
+        className={`${styles.head} reveal ${headVisible ? 'show' : ''}`}
       >
-        <h2 className={styles.sectionTitle}>Proyectos Destacados</h2>
+        <span className={styles.eyebrow}>~ proyectos ~</span>
+        <h2 className={styles.title}>
+          Cosas que <em>construí</em> con código.
+        </h2>
         <p className={styles.subtitle}>
-          Explora algunos de mis proyectos más relevantes
+          Una selección de proyectos en los que trabajé — desde apps móviles
+          que conectan personas hasta plataformas con miles de productos.
         </p>
       </div>
 
       <div className={styles.carouselWrapper}>
         <div className={styles.embla} ref={emblaRef}>
           <div className={styles.emblaContainer}>
-            {projectsData.map((project) => (
+            {projectsData.map((project, idx) => (
               <div key={project.id} className={styles.emblaSlide}>
-                <div className={styles.slideContent}>
-                  {/* IMAGEN - Left */}
+                <article className={styles.card}>
                   <div className={styles.imageSection}>
                     {project.link && project.link !== '#' ? (
                       <Link
@@ -94,7 +75,7 @@ export default function ProjectsCarousel() {
                         <Image
                           src={project.image}
                           alt={project.title}
-                          width={350}
+                          width={360}
                           height={280}
                           quality={85}
                           className={styles.projectImage}
@@ -104,7 +85,7 @@ export default function ProjectsCarousel() {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        width={350}
+                        width={360}
                         height={280}
                         quality={85}
                         className={styles.projectImage}
@@ -112,13 +93,16 @@ export default function ProjectsCarousel() {
                     )}
                   </div>
 
-                  {/* CONTENIDO - Right */}
                   <div className={styles.contentSection}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
-
-                    <p className={styles.projectDescription}>
-                      {project.description}
-                    </p>
+                    <div>
+                      <span className={styles.projectIndex}>
+                        nº {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className={styles.projectTitle}>{project.title}</h3>
+                      <p className={styles.projectDescription}>
+                        {project.description}
+                      </p>
+                    </div>
 
                     <div className={styles.projectActions}>
                       {project.link && project.link !== '#' && (
@@ -129,6 +113,9 @@ export default function ProjectsCarousel() {
                           className={styles.actionButton}
                         >
                           Ver proyecto
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M7 17L17 7M7 7h10v10" />
+                          </svg>
                         </Link>
                       )}
 
@@ -141,10 +128,9 @@ export default function ProjectsCarousel() {
                               rel="noopener noreferrer"
                               className={styles.repoLink}
                             >
-                              GitHub Frontend
+                              GitHub front
                             </Link>
                           )}
-
                           {project.repoBackend && (
                             <Link
                               href={project.repoBackend}
@@ -152,44 +138,41 @@ export default function ProjectsCarousel() {
                               rel="noopener noreferrer"
                               className={styles.repoLink}
                             >
-                              GitHub Backend
+                              GitHub back
                             </Link>
                           )}
                         </div>
                       )}
                     </div>
                   </div>
-                </div>
+                </article>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Controles */}
         <div className={styles.controls}>
           <button
             className={`${styles.navButton} ${!canScrollPrev ? styles.disabled : ''}`}
-            onClick={onPrevButtonClick}
+            onClick={() => emblaApi?.scrollPrev()}
             disabled={!canScrollPrev}
             aria-label="Proyecto anterior"
           >
             ←
           </button>
-
           <div className={styles.dots}>
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
                 className={`${styles.dot} ${index === selectedIndex ? styles.active : ''}`}
-                onClick={() => onDotClick(index)}
+                onClick={() => emblaApi?.scrollTo(index)}
                 aria-label={`Ir al proyecto ${index + 1}`}
               />
             ))}
           </div>
-
           <button
             className={`${styles.navButton} ${!canScrollNext ? styles.disabled : ''}`}
-            onClick={onNextButtonClick}
+            onClick={() => emblaApi?.scrollNext()}
             disabled={!canScrollNext}
             aria-label="Proyecto siguiente"
           >
@@ -199,16 +182,17 @@ export default function ProjectsCarousel() {
       </div>
 
       <div className={styles.bottomCta}>
-        <p className={styles.ctaText}>
-          ¿Interesado en colaborar? Tengo más proyectos disponibles.
-        </p>
+        <p className={styles.ctaText}>¿Querés ver más? Tengo el repo lleno.</p>
         <Link
           href="https://github.com/ezearce"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.githubButton}
         >
-          Ver más en GitHub
+          Más en GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
         </Link>
       </div>
     </section>

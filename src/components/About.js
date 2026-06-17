@@ -1,57 +1,77 @@
-import styles from "@/styles/About.module.css";
-import useInView from "@/hooks/useInView";
+import styles from '@/styles/About.module.css';
+import useInView from '@/hooks/useInView';
+
+const STICKERS = [
+  { icon: '🧉', title: '5+ años', sub: 'cebando código' },
+  { icon: '🚀', title: '20+ proyectos', sub: 'puestos en producción' },
+  { icon: '⚽', title: 'Hincha', sub: 'de River y la Scaloneta' },
+  { icon: '🛠️', title: 'Full-stack', sub: 'front · back · móvil' },
+  { icon: '📍', title: 'Buenos Aires', sub: 'Argentina, GMT-3' },
+];
 
 export default function About() {
-  const [ref, isVisible] = useInView();
-
-  const stats = [
-    { value: "5+", label: "Años de experiencia" },
-    { value: "20+", label: "Proyectos completados" },
-    { value: "100%", label: "Dedicación en cada proyecto" },
-  ];
+  const [textRef, textVisible] = useInView();
+  const [stickersRef, stickersVisible] = useInView({ threshold: 0.15 });
 
   return (
     <section id="about" className={styles.about}>
-      <div
-        ref={ref}
-        className={`${styles.container} ${
-          isVisible ? styles.show : ""
-        }`}
-      >
-        <h2 className={styles.title}>Sobre mí</h2>
+      <div className={styles.inner}>
+        <div className={styles.head}>
+          <span className={styles.eyebrow}>~ sobre mí ~</span>
+          <h2 className={styles.title}>
+            Construyo software con <em>la misma dedicación</em>
+            <br /> que cebo el primer mate del día.
+          </h2>
+        </div>
 
-        <p className={styles.text}>
-          Soy <strong>Ingeniero en Sistemas de Información</strong> y 
-          <strong> Full Stack Developer</strong>, con experiencia real en 
-          el desarrollo de aplicaciones web y móviles en entornos productivos.
-        </p>
+        <div className={styles.grid}>
+          <div
+            ref={textRef}
+            className={`${styles.text} reveal ${textVisible ? 'show' : ''}`}
+          >
+            <p>
+              Soy <strong>Ezequiel</strong>, Ingeniero en Sistemas y Full-Stack
+              Developer. Hace 5+ años laburo todos los días con código —
+              construyo aplicaciones web y móviles que llegan a producción y
+              que la gente usa de verdad.
+            </p>
+            <p>
+              Trabajo principalmente en stacks <strong>React / Next.js</strong>{' '}
+              en el frontend y <strong>Laravel / Node / Spring</strong> en el
+              back. Diseño bases de datos, APIs REST documentadas y
+              arquitecturas que escalan sin romperse cuando entra el primer
+              cliente importante.
+            </p>
+            <p>
+              Me gusta el código limpio, los proyectos con propósito y los
+              equipos donde se puede discutir una decisión técnica con un mate
+              en la mano. Disfruto cuando un detalle bien pensado mejora la
+              experiencia del que usa lo que construí.
+            </p>
 
-        <p className={styles.text}>
-          Trabajo principalmente en el desarrollo de aplicaciones web y móviles, 
-          combinando <strong>frontend moderno</strong> con 
-          <strong> backends robustos y APIs REST seguras</strong>, 
-          diseñando bases de datos escalables y arquitecturas mantenibles.
-        </p>
+            <blockquote className={styles.quote}>
+              “Si vale la pena hacerlo, vale la pena hacerlo bien.”
+            </blockquote>
+          </div>
 
-        <p className={styles.text}>
-          Me enfoco en escribir código limpio, aplicar buenas prácticas y construir productos 
-          que aporten valor real al usuario y al negocio.
-        </p>
-
-        <p className={styles.text}>
-          Disfruto trabajar en equipo bajo metodologías ágiles, 
-          participar en decisiones técnicas y seguir creciendo 
-          como profesional en proyectos desafiantes.
-        </p>
-
-        {/* Stats */}
-        <div className={styles.statsContainer}>
-          {stats.map((stat, index) => (
-            <div key={index} className={styles.stat}>
-              <div className={styles.statValue}>{stat.value}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
-            </div>
-          ))}
+          <div ref={stickersRef} className={styles.stickers}>
+            {STICKERS.map((s, i) => (
+              <div
+                key={s.title}
+                className={`${styles.sticker} ${styles[`s${i + 1}`]} ${
+                  stickersVisible ? styles.show : ''
+                }`}
+              >
+                <span className={styles.stickerIcon} aria-hidden>
+                  {s.icon}
+                </span>
+                <span className={styles.stickerLabel}>
+                  <span className={styles.stickerTitle}>{s.title}</span>
+                  <span className={styles.stickerSub}>{s.sub}</span>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

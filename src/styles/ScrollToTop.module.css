@@ -1,24 +1,22 @@
 .scrollButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #61ddff;
-    color: black;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .scrollButton:hover {
-    background-color: #61ddff;
-    transform: scale(1.1);
-  }
-  
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--accent);
+  color: #faf7f1;
+  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  box-shadow: var(--shadow-warm);
+  transition: all 0.3s ease;
+}
+
+.scrollButton:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px -10px rgba(178, 58, 72, 0.5);
+}

@@ -1,23 +1,61 @@
-.customCursor {
+.cursor {
   position: fixed;
-  width: 18px;
-  height: 18px;
-  background-color: #15BABA;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
   z-index: 9999;
-  transition: transform 0.15s ease-out;
-  box-shadow: 0 0 10px rgba(21, 186, 186, 0.6);
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: opacity 0.3s ease, width 0.2s ease, height 0.2s ease;
+  opacity: 0;
 }
 
-.active {
-  transform: translate(-50%, -50%) scale(1.8);
+.dot.visible {
+  opacity: 1;
 }
 
-/* OCULTAR EN DISPOSITIVOS TÁCTILES */
+.cursor.active {
+  width: 52px;
+  height: 52px;
+}
+
+.dot.active {
+  opacity: 0;
+}
+
+.mate {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(31, 26, 21, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.cursor.active .mate {
+  transform: rotate(-18deg);
+}
+
 @media (hover: none) and (pointer: coarse) {
-  .customCursor {
-    display: none;
-  }
+  .cursor, .dot { display: none; }
 }
